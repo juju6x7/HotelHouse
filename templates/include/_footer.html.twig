@@ -1,13 +1,12 @@
-<footer class="mt-4 pt-4">
+<footer class="mt-4 pt-4 ">
     <div class="container border-top">
         <div class="row">
             <div class="col-12 col-md">
-                <h5>Househotel</h5>
+                <h5>Hotelhouse</h5>
                 <small class="d-block text-muted">&copy; 2022</small>
             </div>
             <div class="col-6 col-md">
                 <h5>Catégories</h5>
-                {# {{ render(controller('App\\Controller\\RenderController::renderCategoriesInFoot')) }} #}
                 <ul class="list-unstyled">
 
                 </ul>
@@ -24,8 +23,26 @@
     <div class="container-fluid bg-dark">
         <div class="row">
             <div class="col">
-                <p class="text-center text-white">&copy; Househotel 2022</p>
+                <p class="text-center text-white">&copy; NewsActu 2022</p>
             </div>
         </div>
     </div>
+
+    
+<div class="bg-dark">
+
+{# FACON 1 Lorsque vous n'avez pas de route dans votre action et qu'il n'y a pas de paramètre, 
+on utilisera la fonction Twig render() et la fonction controller().
+L'appel de l'action se fera de manière statique, et il faudra renseigner le namespace du Controller. 
+Vous DEVREZ mettre 2 back-slashs pour cet appel. #}
+
+    {# {{render(controller('App\\Controller\\RenderController::renderCategoriesInNav')) }} #}
+
+
+{# FACON 1 Lorsque il y a une route dans votre action du controller 
+on utilisera la fonction Twig "render(url('')) #}
+
+{# {{render (url('render_categories_in_nav'))}} #}
+
+</div>
 </footer>

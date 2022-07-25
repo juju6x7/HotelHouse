@@ -78,6 +78,8 @@ class Commande
      */
     private $deletedAt;
 
+   
+
     public function getId(): ?int
     {
         return $this->id;
@@ -226,4 +228,5 @@ class Commande
 
         return $this;
     }
+    
 }

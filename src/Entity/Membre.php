@@ -31,7 +31,7 @@ class Membre implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @var string The hashed password
-     * @ORM\Column(type="string", nullable=false)
+     * @ORM\Column(type="string")
      */
     private $password;
 
@@ -270,7 +270,7 @@ class Membre implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->deletedAt;
     }
 
-    public function setDeletedAt(\DateTimeInterface $deletedAt): self
+    public function setDeletedAt(?\DateTimeInterface $deletedAt): self
     {
         $this->deletedAt = $deletedAt;
 

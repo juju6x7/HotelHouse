@@ -69,12 +69,14 @@ class Chambre
      */
     private $deletedAt;
 
+  
+
+
+
     public function __construct()
     {
         $this->commandes = new ArrayCollection();
     }
-
-
 
     public function getId(): ?int
     {
@@ -183,6 +185,14 @@ class Chambre
         return $this;
     }
 
+
+    public function setDeletedAt(?\DateTimeInterface $deletedAt): self
+    {
+        $this->deletedAt = $deletedAt;
+
+        return $this;
+    }
+
     public function getCreatedAt(): ?\DateTimeInterface
     {
         return $this->createdAt;
@@ -212,10 +222,4 @@ class Chambre
         return $this->deletedAt;
     }
 
-    public function setDeletedAt(?\DateTimeInterface $deletedAt): self
-    {
-        $this->deletedAt = $deletedAt;
-
-        return $this;
-    }
 }

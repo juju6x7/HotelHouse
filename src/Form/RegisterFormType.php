@@ -56,8 +56,8 @@ class RegisterFormType extends AbstractType
                 ]),
             ],
         ])
-            ->add('pseudo', TextType::class, [
-                'label' => 'Pseudo'
+            ->add('pseudo', TextType::class,[
+                'label'=> "Pseudo'"
             ])
 
             ->add('firstname', TextType::class, [
@@ -90,7 +90,7 @@ class RegisterFormType extends AbstractType
                 ],
             ])
             ->add('civility', ChoiceType::class, [
-                'label' => 'Sexe',
+                'label' => 'Civilité',
                 'expanded' => true,
                 'choices' => [
                     'Homme' => 'homme',
@@ -106,8 +106,8 @@ class RegisterFormType extends AbstractType
                     ]),
                 ],
             ]);
+
     }
-    
 
     public function configureOptions(OptionsResolver $resolver): void
     {

@@ -46,6 +46,7 @@ class Slider
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $deletedAt;
+    
 
     public function getId(): ?int
     {
@@ -87,7 +88,6 @@ class Slider
 
         return $this;
     }
-
     public function getCreatedAt(): ?\DateTimeInterface
     {
         return $this->createdAt;
