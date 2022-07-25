@@ -123,5 +123,4 @@ class Slider
 
         return $this;
     }
-
 }

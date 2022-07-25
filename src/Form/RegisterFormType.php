@@ -115,5 +115,4 @@ class RegisterFormType extends AbstractType
             'data_class' => Membre::class,
         ]);
     }
-
 }
