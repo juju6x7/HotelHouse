@@ -107,6 +107,7 @@ class RegisterFormType extends AbstractType
                     ]),
                 ],
             ])
+
             ->add('submit', SubmitType::class, [
                 'label' => 'Valider',
                 'validate' => false,
@@ -115,9 +116,8 @@ class RegisterFormType extends AbstractType
                 ]
             ])
         ;
-
-
     }
+    
 
     public function configureOptions(OptionsResolver $resolver): void
     {

@@ -27,11 +27,7 @@ class Slider
      */
     private $ordre;
 
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $date_register;
-
+    
     /**
      * @ORM\Column(type="datetime")
      */
@@ -77,18 +73,7 @@ class Slider
         return $this;
     }
 
-    public function getDateRegister(): ?\DateTimeInterface
-    {
-        return $this->date_register;
-    }
-
-    public function setDateRegister(\DateTimeInterface $date_register): self
-    {
-        $this->date_register = $date_register;
-
-        return $this;
-    }
-    public function getCreatedAt(): ?\DateTimeInterface
+     public function getCreatedAt(): ?\DateTimeInterface
     {
         return $this->createdAt;
     }

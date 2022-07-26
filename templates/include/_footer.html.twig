@@ -1,41 +1,40 @@
-<footer class="mt-4 pt-4 ">
+{# ////////////////////////////////// FIRST PART //////////////////////////////////// #}
     <div class="container border-top">
-        <div class="row">
+        <div class="row mt-3">
             <div class="col-12 col-md">
                 <h5>HouseHotel</h5>
                 <small class="d-block text-muted">&copy; {{ "now"|date('Y') }}</small>
         
-            <div class="">
+            <div class="col-4 col-md">
                 <ul class="list-unstyled">
                     <li><a href="#" class="text-muted">Mentions légales</a></li>
                     <li><a href="#" class="text-muted">Politique de confidentialité</a></li>
+                
+                    <li><a href="#" class="text-muted">CGV</a></li>
+                    <li><a href="#" class="text-muted">Plan du site</a></li>
+         
+                    <li><a href="#" class="text-muted">Imprimer la page</a></li>
+                    <li><a href="#" class="text-muted">Newsletter</a></li>
+            
                     <li><a href="#" class="text-muted">Contact</a></li>
+                    <li><a href="#" class="text-muted">Partage</a></li>
+    
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-dark">
-        <div class="row">
-            <div class="col">
-                <p class="text-center text-white">&copy; NewsActu 2022</p>
-            </div>
-        </div>
+
+{# ////////////////////////////////// SECOND PART //////////////////////////////////// #}
+    <div class="container-fluid bg-dark mt-5">
+        <p class="text-center text-white p-2 m-0">
+            &copy; HouseHotel {{ "now"|date('Y') }} - Made with ❤ by
+            <a href="#"
+               target="_blank"
+               class="text-reset"
+               data-bs-toggle="tooltip"
+               data-bs-placement="right"
+               data-bs-html="true"
+               title="Have a look to my GitHub <i class='fa-brands fa-github'></i>"
+            >Alexis Blas ©</a>
+        </p>
     </div>
-
-    
-<div class="bg-dark">
-
-{# FACON 1 Lorsque vous n'avez pas de route dans votre action et qu'il n'y a pas de paramètre, 
-on utilisera la fonction Twig render() et la fonction controller().
-L'appel de l'action se fera de manière statique, et il faudra renseigner le namespace du Controller. 
-Vous DEVREZ mettre 2 back-slashs pour cet appel. #}
-
-    {# {{render(controller('App\\Controller\\RenderController::renderCategoriesInNav')) }} #}
-
-{# FACON 1 Lorsque il y a une route dans votre action du controller 
-on utilisera la fonction Twig "render(url('')) #}
-
-{# {{render (url('render_categories_in_nav'))}} #}
-
-</div>
-</footer>

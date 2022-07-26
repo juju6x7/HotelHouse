@@ -55,17 +55,7 @@ class Membre implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $civility;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $status;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $date_register;
-
-    /**
+     /**
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
@@ -217,29 +207,6 @@ class Membre implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getStatus(): ?int
-    {
-        return $this->status;
-    }
-
-    public function setStatus(int $status): self
-    {
-        $this->status = $status;
-
-        return $this;
-    }
-
-    public function getDateRegister(): ?\DateTimeInterface
-    {
-        return $this->date_register;
-    }
-
-    public function setDateRegister(\DateTimeInterface $date_register): self
-    {
-        $this->date_register = $date_register;
-
-        return $this;
-    }
 
     public function getCreatedAt(): ?\DateTimeInterface
     {

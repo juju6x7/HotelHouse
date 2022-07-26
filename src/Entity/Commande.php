@@ -58,10 +58,6 @@ class Commande
      */
     private $email;
 
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $date_register;
 
     /**
      * @ORM\Column(type="datetime")
@@ -99,36 +95,36 @@ class Commande
 
     public function getDateArrival(): ?\DateTimeInterface
     {
-        return $this->date_arrival;
+        return $this->dateArrival;
     }
 
-    public function setDateArrival(\DateTimeInterface $date_arrival): self
+    public function setDateArrival(\DateTimeInterface $dateArrival): self
     {
-        $this->date_arrival = $date_arrival;
+        $this->dateArrival = $dateArrival;
 
         return $this;
     }
 
     public function getDateDeparture(): ?\DateTimeInterface
     {
-        return $this->date_departure;
+        return $this->dateDeparture;
     }
 
-    public function setDateDeparture(\DateTimeInterface $date_departure): self
+    public function setDateDeparture(\DateTimeInterface $dateDeparture): self
     {
-        $this->date_departure = $date_departure;
+        $this->dateDeparture = $dateDeparture;
 
         return $this;
     }
 
     public function getPriceTotal(): ?int
     {
-        return $this->price_total;
+        return $this->dateDeparture;
     }
 
-    public function setPriceTotal(int $price_total): self
+    public function setPriceTotal(int $priceTotal): self
     {
-        $this->price_total = $price_total;
+        $this->priceTotal = $priceTotal;
 
         return $this;
     }
@@ -181,18 +177,7 @@ class Commande
         return $this;
     }
 
-    public function getDateRegister(): ?\DateTimeInterface
-    {
-        return $this->date_register;
-    }
-
-    public function setDateRegister(\DateTimeInterface $date_register): self
-    {
-        $this->date_register = $date_register;
-
-        return $this;
-    }
-
+    
     public function getCreatedAt(): ?\DateTimeInterface
     {
         return $this->createdAt;

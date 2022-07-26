@@ -42,12 +42,7 @@ class Chambre
     /**
      * @ORM\Column(type="integer")
      */
-    private $price_day;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $date_register;
+    private $price_Day;
 
     /**
      * @ORM\OneToMany(targetEntity=Commande::class, mappedBy="id_chambre")
@@ -70,8 +65,6 @@ class Chambre
     private $deletedAt;
 
   
-
-
 
     public function __construct()
     {
@@ -97,24 +90,24 @@ class Chambre
 
     public function getDescriptionShort(): ?string
     {
-        return $this->description_short;
+        return $this->descriptionShort;
     }
 
-    public function setDescriptionShort(string $description_short): self
+    public function setDescriptionShort(string $descriptionShort): self
     {
-        $this->description_short = $description_short;
+        $this->descriptionShort = $descriptionShort;
 
         return $this;
     }
 
     public function getDescriptionLong(): ?string
     {
-        return $this->description_long;
+        return $this->descriptionLong;
     }
 
-    public function setDescriptionLong(string $description_long): self
+    public function setDescriptionLong(string $description_Long): self
     {
-        $this->description_long = $description_long;
+        $this->descriptionLong = $description_Long;
 
         return $this;
     }
@@ -133,28 +126,17 @@ class Chambre
 
     public function getPriceDay(): ?int
     {
-        return $this->price_day;
+        return $this->priceDay;
     }
 
-    public function setPriceDay(int $price_day): self
+    public function setPriceDay(int $priceDay): self
     {
-        $this->price_day = $price_day;
+        $this->priceDay = $priceDay;
 
         return $this;
     }
 
-    public function getDateRegister(): ?\DateTimeInterface
-    {
-        return $this->date_register;
-    }
-
-    public function setDateRegister(\DateTimeInterface $date_register): self
-    {
-        $this->date_register = $date_register;
-
-        return $this;
-    }
-
+  
     /**
      * @return Collection<int, Commande>
      */
