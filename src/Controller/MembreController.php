@@ -49,4 +49,6 @@ public function register(Request $request, EntityManagerInterface $entityManager
         ]);
         var_dump($membre);
     }
+
+   
 }

@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des membres
+{% endblock %}
+
+{% block body %}
+
+	<h1 class="text-center my-4">Gestion des membres</h1>
+
+	<div class="row">
+		<div
+			class="col-6 mx-auto">{# {% include 'includes/_flashes.html.twig' %} #}
+		</div>
+	</div>
+
+	<div class="row mx-auto">
+		<div class="col-4">
+			<a href="#" class="btn btn-primary">Créer un membre</a>
+		</div>
+		<div class="col-4">
+			<a href="#" class="btn btn-warning">
+				<i class="fa fa-trash"></i>
+				Supprimer un membre</a>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-12 mx-auto my-4">
+
+		<h2 class="text-center">Tous les membres</h2>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Email</th>
+					<th>Roles</th>
+					<th>Pseudo</th>
+					<th>Lastname</th>
+					<th>Firstname</th>
+					<th>Civility</th>
+					<th>Date de création</th>
+					<th>Date de modification</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for membre in membres %}
+					<tr>
+						<td>{{ membre.id }}</td>
+						<td>{{ membre.email }}</td>
+						<td>
+							{% for role in membre.roles %}
+							{{role}}
+							{% endfor %}
+						</td>
+						<td>{{ membre.pseudo }}</td>
+						<td>{{ membre.lastname }}</td>
+						<td>{{ membre.firstname }}</td>
+						<td>{{ membre.civility }}</td>
+						<td>{{ membre.createdAt | date('d/m/Y') }}</td>
+						<td>{{ membre.updatedAt | date('d/m/Y') }}</td>
+						<td>
+
+							<a href="" class="text-info" title="Modifier le membre">
+								<i class="fa fa-edit"></i>
+							</a>
+							<a href="" class="text-danger" title="Archiver le membre" onclick="return confirm('Voulez-vous archiver cet membre ?')">
+								<i class="fa fa-trash"></i>
+							</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+	</div>
+</div></div>{% endblock %}
