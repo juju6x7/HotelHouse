@@ -12,6 +12,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 class RegisterFormType extends AbstractType
@@ -105,9 +106,18 @@ class RegisterFormType extends AbstractType
                         'message' => "Vous devez sélectionner une réponse."
                     ]),
                 ],
-            ]);
+            ])
 
+            ->add('submit', SubmitType::class, [
+                'label' => 'Valider',
+                'validate' => false,
+                'attr' => [
+                    'class' => 'd-block col-3 my-3 mx-auto btn btn-success'
+                ]
+            ])
+        ;
     }
+    
 
     public function configureOptions(OptionsResolver $resolver): void
     {
