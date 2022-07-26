@@ -50,7 +50,7 @@ class RegisterFormType extends AbstractType
                     'message' => "Ce champ ne peut pas être vide."
                 ]),
                 new Length([
-                    'min' => 8,
+                    'min' => 4,
                     'max' => 255,
                     'minMessage' => "Votre mot de passe doit comporter {{ limit }} caractères minimum.",
                     'maxMessage' => "Votre mot de passe doit comporter {{ limit }} caractères maximum."
