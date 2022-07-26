@@ -30,7 +30,6 @@ public function register(Request $request, EntityManagerInterface $entityManager
         if($form->isSubmitted() && $form->isValid()) {
             $membre->setRoles(['ROLE_USER']);
             $membre->setStatus(0);
-            $membre->setDateRegister(new DateTime());
             $membre->setCreatedAt(new DateTime());
             $membre->setUpdatedAt(new DateTime());
 
