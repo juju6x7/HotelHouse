@@ -1,32 +1,79 @@
-{% extends "base.html.twig" %}
+{% extends 'base.html.twig' %}
 
-{% block title %}Gestion des membres
+{% block title %}Tableau de bord
 {% endblock %}
 
 {% block body %}
 
+<h1 class="text-center my-4">craft.app.request.getParam("Query String or Post Variable Name")
+	     commandes</h1>
 
-	<h1 class="text-center my-4">Gestion des commandes</h1>
-
-
-	<div class="row">
-		<div class="col-11 mx-auto my-4">
-
-			{{ form_start(form) }}
-
-			    <div class="row">
-
-				    <div class="col-4">{{ form_row(form.) }}</div>
-
-				        {{ form_row(form.created_at | date('d/m/Y') ) }}
-
-				        {{ form_row(form.updatedAt | date('d/m/Y') ) }}
+<div class="row">
+	<div class="col-6 mx-auto">
+		{% include 'include/_flashes.html.twig' %}
+	</div>
+</div>
 
 
-			{{ form_end(form) }}
+<h1 class="text-center my-4">Gestion des commandes</h1>
 
 
-			</div>
-		</div>
+<div class="row">
+	<div class="col-10 mx-auto my-4">
 
-	{% endblock %}
+		<h2 class="text-center"></h2>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Chambre</th>
+					<th>Date de checkin</th>
+					<th>Date de checkout</th>
+					<th>Prix total</th>
+					<th>Prénom</th>
+					<th>Nom</th>
+					<th>Téléphone</th>
+					<th>Email</th>
+					<th>Date et heure d'enregistrement</th>
+					<th>Modifié le</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for commande in commandes %}
+					<tr>
+						<td>{{ commande.id }}</td>
+						<td>{{ commande.chambre }}</td>
+						<td>{{ commande.dateArrival }}</td>
+						<td>{{ commande.dateDeparture }}</td>
+						<td>{{ commande.priceTotal }}</td>
+						<td>{{ commande.firstname}}</td>
+						<td>{{ commande.lastname }}</td>
+						<td>{{ commande.phone}}</td>
+						<td>{{ commande.email}}</td>
+						<td>{{ commande.phone}}</td>
+						<td>{{ commande.createdAt | date('d/m/Y') }}</td>
+						<td>
+							<a href="{{ path('show_commande', {"id": commande.id}) }}" class="text-info" title="Voir la commande">
+								<i class="fa-solid fa-magnifying-glass"></i>
+							</a>
+							<a href="{{ path('update_commande', {"id": commande.id}) }}" class="text-info" title="Modifier la commande">
+								<i class="fa-solid fa-pen-to-square"></i>
+							</a>
+							<a href="{{ path('soft_delete_commande', {'id': commande.id}) }}" class="text-info" title="Archiver l'article" onclick="return confirm('Voulez-vous archiver cette commande ?')">
+								<i class="fa-solid fa-folder-arrow-down"></i>/a>
+								<a href="{{ path('restore_commande', {'id': commande.id}) }}" class="text-info" title="Archiver l'article" onclick="return confirm('Voulez-vous restorer cet article ?')">
+									<i class="fa-solid fa-trash-arrow-up"></i>
+								</a>
+							</td>
+						</td>
+					</tr>
+				 {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+{% endblock %}

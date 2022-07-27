@@ -22,7 +22,7 @@ class AdminController extends AbstractController
     /**
      * @Route("/voir-membre", name="show_membre", methods={"GET"})
      */
-    public function showMembre(Request $request, EntityManagerInterface $entityManager): Response
+    public function showMembre(EntityManagerInterface $entityManager): Response
     {
         try {
             $this->denyAccessUnLessGranted('ROLE_ADMIN');
@@ -32,7 +32,7 @@ class AdminController extends AbstractController
         }
 
         $membres = $entityManager->getRepository(Membre::class)->findAll();
-        return $this->render("admin/show_membre.html.twig", [
+        return $this->render("membre/profile/show_membre.html.twig", [
             'membres' => $membres,
         ]);
     }
@@ -51,15 +51,13 @@ class AdminController extends AbstractController
 
             $membre->setUpdatedAt(new DateTime());
 
-        }
-
-        $entityManager->persist($membre);
-        $entityManager->flush();
+            $entityManager->persist($membre);
+            $entityManager->flush();
 
        
         $this->addFlash('success', "Le membre a été modifié avec succès !");
-        // return $this->redirectToRoute('show_membre');
-
+        return $this->redirectToRoute('show_membre');
+        }
         $membres = $entityManager->getRepository(Membre::class)->findAll();
 
         return $this->render("admin/form/gestion_membre.html.twig", [
@@ -80,4 +78,21 @@ class AdminController extends AbstractController
         $this->addFlash('success', "Le membre a bien été supprimé de la base de données");
         return $this->redirectToRoute('show_membre');
     }
+
+/**
+*@Route("/gestion-commande", name="gestion_commandes", methods={"GET|POST"}))
+*/
+public function gestionCommandes(EntityManagerInterface $entityManager): Response
+{
+$commandes = $entityManager->getRepository(Commande::class)->findAll();
+return $this->render("admin/form/gestion_commandes.html.twig", [
+    'commandes' => $commandes,
+]);
+}
+
+
+
+
+
+
 }
