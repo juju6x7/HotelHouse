@@ -58,7 +58,7 @@ class RegisterFormType extends AbstractType
             ],
         ])
             ->add('pseudo', TextType::class,[
-                'label'=> "Pseudo'"
+                'label'=> "Pseudo"
             ])
 
             ->add('firstname', TextType::class, [

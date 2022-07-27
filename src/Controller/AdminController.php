@@ -56,20 +56,19 @@ class AdminController extends AbstractController
         $entityManager->persist($membre);
         $entityManager->flush();
 
-       
-        $this->addFlash('success', "Le membre a été modifié avec succès !");
-
-
         $membres = $entityManager->getRepository(Membre::class)->findAll();
 
         return $this->render("admin/form/gestion_membre.html.twig", [
             'form' => $form->createView(),
             'membres' => $membres
         ]); 
+        
+        $this->addFlash('success', "Le membre a bien été supprimé de la base de données");
+        return $this->redirectToRoute('show_membre');
     } # end function updatemembre
 
     /**
-     * @Route("/supprimer-un-membre_{id}", name="hard_delete_article", methods={"GET"})
+     * @Route("/supprimer-membre_{id}", name="hard_delete_article", methods={"GET"})
      */
     public function hardDeleteArticle(Membre $membre, EntityManagerInterface $entityManager): RedirectResponse
     {

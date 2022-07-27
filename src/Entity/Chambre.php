@@ -27,12 +27,12 @@ class Chambre
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $description_short;
+    private $descriptionShort;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $description_long;
+    private $descriptionLong;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -42,7 +42,7 @@ class Chambre
     /**
      * @ORM\Column(type="integer")
      */
-    private $price_Day;
+    private $priceDay;
 
     /**
      * @ORM\OneToMany(targetEntity=Commande::class, mappedBy="id_chambre")
