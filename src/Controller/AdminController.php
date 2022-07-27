@@ -58,7 +58,7 @@ class AdminController extends AbstractController
 
        
         $this->addFlash('success', "Le membre a été modifié avec succès !");
-
+        return $this->redirectToRoute('show_membre');
 
         $membres = $entityManager->getRepository(Membre::class)->findAll();
 
@@ -69,7 +69,7 @@ class AdminController extends AbstractController
     } # end function updatemembre
 
     /**
-     * @Route("/supprimer-un-membre_{id}", name="hard_delete_article", methods={"GET"})
+     * @Route("/supprimer-membre_{id}", name="hard_delete_article", methods={"GET"})
      */
     public function hardDeleteArticle(Membre $membre, EntityManagerInterface $entityManager): RedirectResponse
     {
