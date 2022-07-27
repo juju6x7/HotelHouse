@@ -10,6 +10,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
@@ -49,20 +50,34 @@ class AdminController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $membre->setUpdatedAt(new DateTime());
-            // $membre->getId();
+
         }
 
         $entityManager->persist($membre);
         $entityManager->flush();
 
+       
         $this->addFlash('success', "Le membre a été modifié avec succès !");
 
+
         $membres = $entityManager->getRepository(Membre::class)->findAll();
+
         return $this->render("admin/form/gestion_membre.html.twig", [
             'form' => $form->createView(),
             'membres' => $membres
-        ]);
-
-        // $membre = $entityManager->getRepository(Membre::class)->findBy(['membre' => $membre->getId()]);
+        ]); 
     } # end function updatemembre
+
+    /**
+     * @Route("/supprimer-un-membre_{id}", name="hard_delete_article", methods={"GET"})
+     */
+    public function hardDeleteArticle(Membre $membre, EntityManagerInterface $entityManager): RedirectResponse
+    {
+
+        $entityManager->remove($membre);
+        $entityManager->flush();
+
+        $this->addFlash('success', "Le membre a bien été supprimé de la base de données");
+        return $this->redirectToRoute('show_membre');
+    }
 }
