@@ -59,13 +59,15 @@ class AdminController extends AbstractController
        
         $this->addFlash('success', "Le membre a été modifié avec succès !");
 
-
         $membres = $entityManager->getRepository(Membre::class)->findAll();
 
         return $this->render("admin/form/gestion_membre.html.twig", [
             'form' => $form->createView(),
             'membres' => $membres
         ]); 
+        
+        $this->addFlash('success', "Le membre a été modifié avec succès !");
+        return $this->redirectToRoute('show_membre');
     } # end function updatemembre
 
     /**

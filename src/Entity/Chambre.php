@@ -27,12 +27,17 @@ class Chambre
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $description_short;
+    private $alias;
+    
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $descriptionShort;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $description_long;
+    private $descriptionLong;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -42,7 +47,7 @@ class Chambre
     /**
      * @ORM\Column(type="integer")
      */
-    private $price_Day;
+    private $priceDay;
 
     /**
      * @ORM\OneToMany(targetEntity=Commande::class, mappedBy="id_chambre")
@@ -88,6 +93,18 @@ class Chambre
         return $this;
     }
 
+    public function getAlias(): ?string
+    {
+        return $this->alias;
+    }
+
+    public function setAlias(string $alias): self
+    {
+        $this->alias = $alias;
+
+        return $this;
+    }
+    
     public function getDescriptionShort(): ?string
     {
         return $this->descriptionShort;
@@ -105,9 +122,9 @@ class Chambre
         return $this->descriptionLong;
     }
 
-    public function setDescriptionLong(string $description_Long): self
+    public function setDescriptionLong(string $descriptionLong): self
     {
-        $this->descriptionLong = $description_Long;
+        $this->descriptionLong = $descriptionLong;
 
         return $this;
     }
