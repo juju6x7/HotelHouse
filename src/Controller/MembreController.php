@@ -29,7 +29,6 @@ public function register(Request $request, EntityManagerInterface $entityManager
         # 3 - Si le form est soumis ET valide
         if($form->isSubmitted() && $form->isValid()) {
             $membre->setRoles(['ROLE_USER']);
-            $membre->setStatus(0);
             $membre->setCreatedAt(new DateTime());
             $membre->setUpdatedAt(new DateTime());
 
@@ -46,7 +45,7 @@ public function register(Request $request, EntityManagerInterface $entityManager
         return $this->render("membre/register.html.twig", [
             'form' => $form->createView()
         ]);
-        var_dump($membre);
+        
     }
 
    

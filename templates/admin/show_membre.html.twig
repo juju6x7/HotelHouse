@@ -25,8 +25,6 @@
 <div class="row">
 	<div class="col-12 mx-auto my-4">
 
-		<h2 class="text-center">Tous les membres</h2>
-
 		<table class="table">
 			<thead>
 				<tr>
@@ -47,10 +45,10 @@
 					<tr>
 						<td>{{ membre.id }}</td>
 						<td>{{ membre.email }}</td>
-						<td>
-							{% for role in membre.roles %}
+						<td>{{ membre.roles | first }}
+							{# {% for role in membre.roles %}
 							{{role}}
-							{% endfor %}
+							{% endfor %} #}
 						</td>
 						<td>{{ membre.pseudo }}</td>
 						<td>{{ membre.lastname }}</td>
@@ -60,7 +58,7 @@
 						<td>{{ membre.updatedAt | date('d/m/Y') }}</td>
 						<td>
 
-							<a href="" class="text-info" title="Modifier le membre">
+							<a href=" {{ path('update_membre', {"id": membre.id}) }}" class="text-info" title="Modifier le membre">
 								<i class="fa fa-edit"></i>
 							</a>
 							<a href="" class="text-danger" title="Archiver le membre" onclick="return confirm('Voulez-vous archiver cet membre ?')">
