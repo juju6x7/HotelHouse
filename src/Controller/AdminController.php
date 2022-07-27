@@ -58,7 +58,7 @@ class AdminController extends AbstractController
 
        
         $this->addFlash('success', "Le membre a été modifié avec succès !");
-        return $this->redirectToRoute('show_membre');
+        // return $this->redirectToRoute('show_membre');
 
         $membres = $entityManager->getRepository(Membre::class)->findAll();
 

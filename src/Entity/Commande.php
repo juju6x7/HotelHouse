@@ -26,17 +26,17 @@ class Commande
     /**
      * @ORM\Column(type="date")
      */
-    private $date_arrival;
+    private $dateArrival;
 
     /**
      * @ORM\Column(type="date")
      */
-    private $date_departure;
+    private $dateDeparture;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $price_total;
+    private $priceTotal;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -119,7 +119,7 @@ class Commande
 
     public function getPriceTotal(): ?int
     {
-        return $this->dateDeparture;
+        return $this->priceTotal;
     }
 
     public function setPriceTotal(int $priceTotal): self
