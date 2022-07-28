@@ -13,17 +13,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class CommandeController extends AbstractController
 {
 
-/**
-*@Route("/voir-commandes_{id}", name="show_commande", methods={"GET"}))
-*/
-public function showCommande(EntityManagerInterface $entityManager): Response
-{
-$commandes = $entityManager->getRepository(Commande::class)->findAll();
-return $this->render("/commande/show_commande.html.twig", [
+    /**
+    *@Route("/voir-commandes_{id}", name="show_commande", methods={"GET"}))
+    */
+    public function showCommande(EntityManagerInterface $entityManager): Response
+    {
+    $commandes = $entityManager->getRepository(Commande::class)->findAll();
+    return $this->render("/commande/show_commande.html.twig", [
     'commandes' => $commandes
-]);
-}
-
+    ]);
+    }
 
     /**
      * @Route("/ajouter-une-commande_{id}", name="create_commande", methods={"GET|POST"})
