@@ -14,19 +14,19 @@ class CommandeController extends AbstractController
 {
 
 /**
-*@Route("/voir-commande", name="show_commande", methods={"GET"}))
+*@Route("/voir-commande_{id}", name="show_commande", methods={"GET"}))
 */
 public function showCommande(EntityManagerInterface $entityManager): Response
 {
-$commandes = $entityManager->getRepository(Commande::class)->findAll();
+$commande = $entityManager->getRepository(Commande::class)->findById();
 return $this->render("/commande/show_commande.html.twig", [
-    'commandes' => $commandes,
+    'commande' => $commande,
 ]);
 }
 
 
     /**
-     * @Route("/ajouter-une-commande", name="create_commande", methods={"GET|POST"})
+     * @Route("/ajouter-une-commande_{id}", name="create_commande", methods={"GET|POST"})
      */
     public function createCommande(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -42,7 +42,7 @@ return $this->render("/commande/show_commande.html.twig", [
             $commande->setCreatedAt(new DateTime());
             $commande->setUpdatedAt(new DateTime());
 
-            # Ajout d'un client à la commande (User récupéré depuis la session)
+            #3 Ajout d'un client à la commande (User récupéré depuis la session)
              $commande->getId();
              $commande->getFirstname();
              $commande->getChambre();
@@ -64,7 +64,7 @@ return $this->render("/commande/show_commande.html.twig", [
 
         } # end if ($form)
 
-        # 3 - Création de la vue
+        # 4 - Création de la vue
         return $this->render("admin/form/create_commande.html.twig", [
             'form' => $form->createView(),
     
@@ -80,9 +80,9 @@ return $this->render("/commande/show_commande.html.twig", [
              $form = $this->createForm(CommandeFormType::class, $commande)->handleRequest($request);
 
 
-        if ($form->isSubmitted() && $form->isValid()) {
-
-       
+        if ($form->isSubmitted() && $form->isValid())
+    {
+      
             $commande->setUpdatedAt(new DateTime());
 
         $entityManager->persist($commande);
@@ -92,11 +92,11 @@ return $this->render("/commande/show_commande.html.twig", [
         $this->addFlash('success', "La commande a été modifiée avec succès !");
         return $this->redirectToRoute('show_commande');
         }
-        $commandes = $entityManager->getRepository(Commande::class)->findAll();
+        $commande = $entityManager->getRepository(Commande::class)->findById();
 
         return $this->render("admin/form/gestion_commandes.html.twig", [
             'form' => $form->createView(),
-            'commandes' => $commandes
+            'commande' => $commande
         ]); 
     } # end funct
 
@@ -112,7 +112,7 @@ return $this->render("/commande/show_commande.html.twig", [
     }
 
      /**
-     * @Route("/archiver-commande{id}", name="soft_delete_commande", methods={"GET"})
+     * @Route("/archiver-commande_{id}", name="soft_delete_commande", methods={"GET"})
      */
     public function archiverCommande(Commande $commande, EntityManagerInterface $entityManager):  Response
     {     
@@ -142,14 +142,14 @@ return $this->render("/commande/show_commande.html.twig", [
     }
 
     /**
-     * @Route("/voir-les-commandes-archivees", name="show_trash", methods={"GET"})
+     * @Route("/voir-les-commandes-archivees_{id}", name="show_trash", methods={"GET"})
      */
     public function showTrash(EntityManagerInterface $entityManager): Response
     {
         $archivedCommandes = $entityManager->getRepository(Commande::class)->findByTrash();
 
         return $this->render("admin/trash/commande_trash.html.twig", [
-            'archivedCommandes' => $archivedCommandes
+            'archivedCommandes' => $archivedCommandes,
         ]);
     }
 
