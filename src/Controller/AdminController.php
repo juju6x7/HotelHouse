@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use DateTime;
 use App\Entity\Membre;
+use App\Entity\Commande;
 use App\Form\MembreFormType;
 use App\Form\RegisterFormType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -54,22 +55,22 @@ class AdminController extends AbstractController
             $entityManager->persist($membre);
             $entityManager->flush();
 
-       
-        $this->addFlash('success', "Le membre a été modifié avec succès !");
-        return $this->redirectToRoute('show_membre');
+
+            $this->addFlash('success', "Le membre a été modifié avec succès !");
+            return $this->redirectToRoute('show_membre');
         }
         $membres = $entityManager->getRepository(Membre::class)->findAll();
 
         return $this->render("admin/form/gestion_membre.html.twig", [
             'form' => $form->createView(),
             'membres' => $membres
-        ]); 
+        ]);
     } # end function updatemembre
 
     /**
-     * @Route("/supprimer-membre_{id}", name="hard_delete_article", methods={"GET"})
+     * @Route("/supprimer-membre_{id}", name="hard_delete_membre", methods={"GET"})
      */
-    public function hardDeleteArticle(Membre $membre, EntityManagerInterface $entityManager): RedirectResponse
+    public function hardDeleteMembre(Membre $membre, EntityManagerInterface $entityManager): RedirectResponse
     {
 
         $entityManager->remove($membre);
@@ -79,20 +80,35 @@ class AdminController extends AbstractController
         return $this->redirectToRoute('show_membre');
     }
 
-/**
-*@Route("/gestion-commande", name="gestion_commandes", methods={"GET|POST"}))
-*/
-public function gestionCommandes(EntityManagerInterface $entityManager): Response
-{
-$commandes = $entityManager->getRepository(Commande::class)->findAll();
-return $this->render("admin/form/gestion_commandes.html.twig", [
-    'commandes' => $commandes,
-]);
+    /**
+     *@Route("/gestion-commande", name="gestion_commandes", methods={"GET|POST"}))
+     */
+    public function gestionCommandes(EntityManagerInterface $entityManager): Response
+    {
+        $commandes = $entityManager->getRepository(Commande::class)->findAll();
+        return $this->render("admin/form/gestion_commandes.html.twig", [
+            'commandes' => $commandes,
+        ]);
+    }
+
+    /**
+     * @Route("/archiver-commande{id}", name="soft_delete_commande", methods={"GET"})
+     */
+    public function updateCommande(Commande $commande, EntityManagerInterface $entityManager): RedirectResponse
+    {
+
+        $form = $this->createForm(CommandeFormType::class, $commande)->handleRequest($request);
+
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $commande->setUpdatedAt(new DateTime());
+
+            $entityManager->persist($commande);
+            $entityManager->flush();
+
+        $this->addFlash('success', "La commande a bien été archivée");
+        return $this->redirectToRoute('show_commande');
+    }
 }
-
-
-
-
-
-
 }

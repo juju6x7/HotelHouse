@@ -20,7 +20,7 @@ class CommandeController extends AbstractController
 public function showCommande(EntityManagerInterface $entityManager): Response
 {
 $commandes = $entityManager->getRepository(Commande::class)->findAll();
-return $this->render("membre/profile/show_commande.html.twig", [
+return $this->render("/commande/show_commande.html.twig", [
     'commandes' => $commandes,
 ]);
 }
@@ -50,4 +50,12 @@ return $this->render("membre/profile/show_commande.html.twig", [
             'membres' => $commandes
         ]); 
     } # end function updatemembre
+
+
+
+
+
+
+
+    
 }
