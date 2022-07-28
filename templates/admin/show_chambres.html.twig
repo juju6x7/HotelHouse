@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des chambres - HouseHotel
+{% endblock %}
+
+{% block body %}
+
+	<h1 class="text-center my-4">Gestion des chambres</h1>
+
+	<div class="row">
+		<div
+			class="col-6 mx-auto">{# {% include 'includes/_flashes.html.twig' %} #}
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row justify-content-between">
+			<div class="col-4">
+				<a href="{{ path('create_chambre') }}" class="btn btn-primary">
+					<i class="fa-solid fa-plus"></i>
+					Ajouter une chambre</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-10 mx-auto my-4">
+
+		<h2 class="text-center">Toutes les chambres</h2>
+
+		<table class="table my-4">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Titre</th>
+					<th>Description courte</th>
+					<th>Description longue</th>
+					<th>Photo</th>
+					<th>Prix (journalier/nuitée)</th>
+					<th>Date enregistrement</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% for chambre in chambres %}
+					<tr>
+						<td>{{ chambre.id }}</td>
+						<td>{{ chambre.title }}</td>
+						<td>{{ chambre.descriptionShort }}</td>
+						<td>{{ chambre.descriptionLong }}</td>
+						<td><img src=" {{ asset('uploads/' ~ chambre.photo) }}" width='300' height='200' alt=""></td>
+						<td>{{ chambre.priceDay }}</td>
+						<td>{{ chambre.createdAt | date('d/m/Y') }}</td>
+						<td>{{ chambre.updatedAt | date('d/m/Y') }}</td>
+						<td>
+
+							<a href=" {{ path('update_chambre', {"id": chambre.id}) }}" class="text-info" title="Modifier la chambre">
+								<i class="fa fa-edit"></i>
+							</a>
+							<a href="{{ path('hard_delete_chambre', {"id" : chambre.id}) }}" class="text-danger" title="Archiver la chambre" onclick="return confirm('Voulez-vous archiver cette chambre ?')">
+								<i class="fa fa-trash"></i>
+							</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+	</div>
+</div></div>{% endblock %}

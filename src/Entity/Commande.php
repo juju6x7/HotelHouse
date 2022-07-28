@@ -119,7 +119,7 @@ class Commande
 
     public function getPriceTotal(): ?int
     {
-        return $this->dateDeparture;
+        return $this->priceTotal;
     }
 
     public function setPriceTotal(int $priceTotal): self

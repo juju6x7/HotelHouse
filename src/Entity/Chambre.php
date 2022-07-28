@@ -24,6 +24,11 @@ class Chambre
      */
     private $title;
 
+    // /**
+    //  * @ORM\Column(type="string", length=255)
+    //  */
+    // private $alias;
+    
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -88,6 +93,18 @@ class Chambre
         return $this;
     }
 
+    // public function getAlias(): ?string
+    // {
+    //     return $this->alias;
+    // }
+
+    // public function setAlias(string $alias): self
+    // {
+    //     $this->alias = $alias;
+
+    //     return $this;
+    // }
+    
     public function getDescriptionShort(): ?string
     {
         return $this->descriptionShort;
@@ -105,9 +122,9 @@ class Chambre
         return $this->descriptionLong;
     }
 
-    public function setDescriptionLong(string $description_Long): self
+    public function setDescriptionLong(string $descriptionLong): self
     {
-        $this->descriptionLong = $description_Long;
+        $this->descriptionLong = $descriptionLong;
 
         return $this;
     }
