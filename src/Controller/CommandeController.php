@@ -60,12 +60,12 @@ return $this->render("/commande/show_commande.html.twig", [
                 $entityManager->flush();
 
                 $this->addFlash('success', "Votre commande Admin a bien été ajoutée.");
-                return $this->redirectToRoute('show_commande');
+                return $this->redirectToRoute('create_commande');
 
         } # end if ($form)
 
         # 3 - Création de la vue
-        return $this->render("admin/form/gestion_commandes.html.twig", [
+        return $this->render("admin/form/create_commande.html.twig", [
             'form' => $form->createView(),
     
         ]);
