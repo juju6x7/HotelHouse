@@ -80,35 +80,6 @@ class AdminController extends AbstractController
         return $this->redirectToRoute('show_membre');
     }
 
-    /**
-     *@Route("/gestion-commande", name="gestion_commandes", methods={"GET|POST"}))
-     */
-    public function gestionCommandes(EntityManagerInterface $entityManager): Response
-    {
-        $commandes = $entityManager->getRepository(Commande::class)->findAll();
-        return $this->render("admin/form/gestion_commandes.html.twig", [
-            'commandes' => $commandes,
-        ]);
-    }
 
-    /**
-     * @Route("/archiver-commande{id}", name="soft_delete_commande", methods={"GET"})
-     */
-    public function updateCommande(Commande $commande, EntityManagerInterface $entityManager): RedirectResponse
-    {
-
-        $form = $this->createForm(CommandeFormType::class, $commande)->handleRequest($request);
-
-
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            $commande->setUpdatedAt(new DateTime());
-
-            $entityManager->persist($commande);
-            $entityManager->flush();
-
-        $this->addFlash('success', "La commande a bien été archivée");
-        return $this->redirectToRoute('show_commande');
-    }
-}
+  
 }

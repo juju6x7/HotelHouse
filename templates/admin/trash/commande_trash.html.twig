@@ -1,34 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Gestion des commandes
-{% endblock %}
+{% block title %}Voir la poubelle{% endblock %}
 
 {% block body %}
 
-	<h1 class="text-center my-4">Gestion des commandes</h1>
     <div class="row">
-					<div class="col-6 mx-auto my-4">
-						<a href="{{ path('create_commande') }}" class="btn btn-primary">
-							<i class="fa-solid fa-plus"></i>
-							Ajouter une commande</a>
-				</div>
-			</div>
-
-	<div class="row">
-		<div
-			class="col-6 mx-auto">
+        <div class="col-10 mx-auto my-4">
             {% include 'include/_flashes.html.twig' %}
-		</div>
-	</div>
+        </div>
+    </div>
 
-
-
-
+    <div class="row">
+        <div class="col-12 ms-3">
+            <a href="{{ path('show_dashboard') }}"><i class="fa-solid fa-arrow-left"></i> Retour au Dashboard</a>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-10 mx-auto my-4">
 
-            <h2 class="text-center"></h2>
+            <h2 class="text-center">Commandes archivées</h2>
 
             <table class="table">
                 <thead>
@@ -68,11 +59,13 @@
                             <a href="{{ path('restore_commande', {'id': commande.id}) }}" class="text-info" title="Archiver l'article" onclick="return confirm('Voulez-vous restorer cet article ?')"><i class="fa-solid fa-trash-arrow-up"></i></a>
                         </td>
                     </tr>
+                     {% else %}
+                    <tr>
+                        <td colspan="7" class="bg-warning text-center">Aucune commande dans la poubelle</td>
+                    </tr>
                 {% endfor %}
                 </tbody>
             </table>
         </div>
     </div>
-
-
 {% endblock %}
