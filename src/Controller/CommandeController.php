@@ -18,9 +18,9 @@ class CommandeController extends AbstractController
     */
     public function showCommande(EntityManagerInterface $entityManager): Response
     {
-    $commandes = $entityManager->getRepository(Commande::class)->findAll();
+    $commande = $entityManager->getRepository(Commande::class)->findAll();
     return $this->render("/commande/show_commande.html.twig", [
-    'commandes' => $commandes
+    'commande' => $commande
     ]);
     }
 
@@ -41,7 +41,7 @@ class CommandeController extends AbstractController
             $commande->setCreatedAt(new DateTime());
             $commande->setUpdatedAt(new DateTime());
 
-            #3 Ajout d'un client à la commande (User récupéré depuis la session)
+            #3 Ajout des data de commande
              $commande->getId();
              $commande->getFirstname();
              $commande->getChambre();
@@ -52,19 +52,18 @@ class CommandeController extends AbstractController
              $commande->getLastname();
              $commande->getPhone();
              $commande->getEmail();
-             $commande->getFirstname();
-             $commande->getFirstname();
+             
 
                 $entityManager->persist($commande);
                 $entityManager->flush();
 
                 $this->addFlash('success', "Votre commande Administrateur a bien été ajoutée.");
-                return $this->redirectToRoute('show_create_commande');
+                return $this->redirectToRoute('show_commande');
 
         } # end if ($form)
 
         # 4 - Création de la vue
-        return $this->render("admin/form/create_commande.html.twig", [
+        return $this->render("commande\show_commande.html.twig", [
             'form' => $form->createView(),
     
         ]);
@@ -127,7 +126,7 @@ class CommandeController extends AbstractController
         $entityManager->flush();
 
         $this->addFlash('success', "La commande a bien été restaurée");
-        return $this->redirectToRoute('show_commande');
+        return $this->redirectToRoute('show_commandes');
     }
 
     /**
