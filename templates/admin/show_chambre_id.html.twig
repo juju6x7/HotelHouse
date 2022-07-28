@@ -1,33 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Gestion des chambres - HouseHotel
-{% endblock %}
+{% block title %}Chambres - NewsActu{% endblock %}
 
 {% block body %}
 
-	<h1 class="text-center my-4">Gestion des chambres</h1>
+ <h1 class="text-center my-4">Toutes les chambres</h1>
 
 	<div class="row">
-		<div
-			class="col-6 mx-auto">{# {% include 'includes/_flashes.html.twig' %} #}
+		<div class="col-10 mx-auto my-4">
+			{% include "include/_flashes.html.twig" %}
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row justify-content-between">
-			<div class="col-4">
-				<a href="{{ path('create_chambre') }}" class="btn btn-primary">
-					<i class="fa-solid fa-plus"></i>
-					Ajouter une chambre</a>
-			</div>
+	<div class="row">
+		<div class="col-12 ms-3">
+			<a href="{{ path('show_dashboard' )}}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Retour au Tableau de bord</a>
 		</div>
 	</div>
-</div>
 
-<div class="row">
-	<div class="col-10 mx-auto my-4">
+    <div class="row">
+		<div class="col-10 mx-auto my-4">
 
-		<h2 class="text-center">Toutes les chambres</h2>
+			<h2 class="text-center">Toutes les chambres</h2>
 
 		<table class="table my-4">
 			<thead>
@@ -59,7 +53,7 @@
 							<a href=" {{ path('update_chambre', {"id": chambre.id}) }}" class="text-info" title="Modifier la chambre">
 								<i class="fa fa-edit"></i>
 							</a>
-							<a href="{{ path('hard_delete_chambre', {"id" : chambre.id}) }}" class="text-danger" title="Archiver la chambre" onclick="return confirm('Voulez-vous archiver cette chambre ?')">
+							<a href="{{ path('hard_delete_chambre', {"id" : chambre.id}) }}" class="text-danger" title="Supprimer la chambre" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette chambre ?')">
 								<i class="fa fa-trash"></i>
 							</a>
 						</td>
@@ -67,6 +61,6 @@
 				{% endfor %}
 			</tbody>
 		</table>
-
+		</div>
 	</div>
-</div></div>{% endblock %}
+{% endblock %}

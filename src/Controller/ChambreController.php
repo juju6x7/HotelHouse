@@ -28,16 +28,23 @@ class ChambreController extends AbstractController
         ]);
     } # end function showChambre()
 
-    
+    /**
+     * @Route("voir_chambre_{id}", name="show_chambre_{id}", methods={"GET"})
+     */
+    public function showchambreId(Chambre $chambre): Response
+    {
+        return $this->render("admin/show_chambre_id.html.twig", [
+            'chambre' => $chambre
+        ]);
+    }
+
     /**
      * @Route("/ajouter-chambre", name="create_chambre", methods={"GET|POST"})
      */
-    public function createChambre(Chambre $chambre, Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
+    public function createChambre(Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
     {
-        # 1 - Instanciation
         $chambre = new Chambre();
 
-        # 2 - Création du formulaire
         $form = $this->createForm(ChambreFormType::class, $chambre)
             ->handleRequest($request);
 
@@ -52,15 +59,11 @@ class ChambreController extends AbstractController
             /** @var UploadedFile $photo */
             $photo = $form->get('photo')->getData();
 
-            # Si une photo a été uploadée dans le formulaire on va faire le traitement nécessaire à son stockage dans notre projet.
             if($photo) {
-                # Déconstructioon
                 $extension = '.' . $photo->guessExtension();
                 $originalFilename = pathinfo($photo->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
 //                $safeFilename = $chambre->getAlias();
-
-                # Reconstruction
                 $newFilename = $safeFilename . '_' . uniqid() . $extension;
 
                 try {
@@ -72,18 +75,14 @@ class ChambreController extends AbstractController
                 }
             } # end if($photo)
 
-                // # Ajout d'un auteur à la chambre (User récupéré depuis la session)
-                // $chambre->setAuthor($this->getUser());
-
                 $entityManager->persist($chambre);
                 $entityManager->flush();
 
                 $this->addFlash('success', "La chambre a bien été mise en ligne !");
-                return $this->redirectToRoute('admin/show_chambres.html.twig');
+                return $this->redirectToRoute('show_chambres');
 
         } # end if ($form)
 
-        # 3 - Création de la vue
         return $this->render("admin/form/gestion_chambre.html.twig", [
             'form' => $form->createView()
         ]);
@@ -96,7 +95,6 @@ class ChambreController extends AbstractController
     {
         $originalPhoto = $chambre->getPhoto();
 
-        # 2 - Création du formulaire
         $form = $this->createForm(ChambreFormType::class, $chambre, [
             'photo' => $originalPhoto
         ])->handleRequest($request);
@@ -111,16 +109,12 @@ class ChambreController extends AbstractController
             /** @var UploadedFile $photo */
             $photo = $form->get('photo')->getData();
 
-            # Si une photo a été uploadée dans le formulaire on va faire le traitement nécessaire à son stockage dans notre projet.
             if($photo) {
-
-                # Déconstructioon
                 $extension = '.' . $photo->guessExtension();
                 $originalFilename = pathinfo($photo->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
 //                $safeFilename = $chambre->getAlias();
 
-                # Reconstruction
                 $newFilename = $safeFilename . '_' . uniqid() . $extension;
 
                 try {
@@ -134,17 +128,13 @@ class ChambreController extends AbstractController
                 $chambre->setPhoto($originalPhoto);
             } # end if($photo)
 
-            // # Ajout d'un auteur à l'chambre (User récupéré depuis la session)
-            // $chambre->setAuthor($this->getUser());
-
             $entityManager->persist($chambre);
             $entityManager->flush();
 
             $this->addFlash('success', "La chambre a bien été modifiée !");
-            return $this->redirectToRoute('admin/show_chambres.html.twig');
+            return $this->redirectToRoute('show_chambres');
         } # end if ($form)
 
-        # 3 - Création de la vue
         return $this->render("admin/form/gestion_chambre.html.twig", [
             'form' => $form->createView(),
             'chambre' => $chambre
@@ -152,60 +142,18 @@ class ChambreController extends AbstractController
     }# end function updateChambre
 
     /**
-     * @Route("/archiver-chambre_{id}", name="soft_delete_chambre", methods={"GET"})
-     */
-    public function softDeleteChambre(Chambre $chambre, EntityManagerInterface $entityManager): Response
-    {
-        $chambre->setDeletedAt(new DateTime());
-
-        $entityManager->persist($chambre);
-        $entityManager->flush();
-
-        $this->addFlash('success', "La chambre a bien été archivée.");
-        return $this->redirectToRoute('admin/show_chambres.html.twig');
-    }# end function softDelete
-
-    /**
-     * @Route("/restaurer-chambre_{id}", name="restore_chambre", methods={"GET"})
-     */
-    public function restoreChambre(Chambre $chambre, EntityManagerInterface $entityManager): RedirectResponse
-    {
-        $chambre->setDeletedAt(null);
-
-        $entityManager->persist($chambre);
-        $entityManager->flush();
-
-        $this->addFlash('success', "La chambre a bien été restaurée.");
-        return $this->redirectToRoute('admin/show_chambres.html.twig');
-    }
-
-    /**
-     * @Route("/voir-les-chambres-archives", name="show_trash", methods={"GET"})
-     */
-    public function showTrash(EntityManagerInterface $entityManager): Response
-    {
-        $archivedChambres = $entityManager->getRepository(Chambre::class)->findByTrash();
-
-        return $this->render("admin/trash/chambre_trash.html.twig", [
-            'archivedChambres' => $archivedChambres
-        ]);
-    }
-
-    /**
      * @Route("/supprimer-chambre_{id}", name="hard_delete_chambre", methods={"GET"})
      */
     public function hardDeleteChambre(Chambre $chambre, EntityManagerInterface $entityManager): RedirectResponse
     {
-        // Suppression manuelle de la photo.
         $photo = $chambre->getPhoto();
-        
-        // On utilise la fonction native de PHP unlink() pour supprimer un fichier dans le filesystem.
+
         unlink($this->getParameter('uploads_dir'). '/' . $photo);
 
         $entityManager->remove($chambre);
         $entityManager->flush();
 
         $this->addFlash('success', "La chambre a bien été supprimée de la base de données.");
-        return $this->redirectToRoute('admin/show_chambres.html.twig');
+        return $this->redirectToRoute('show_chambres');
     } #end admin chambre
 } # end class
