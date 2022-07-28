@@ -43,24 +43,24 @@ return $this->render("/commande/show_commande.html.twig", [
             $commande->setUpdatedAt(new DateTime());
 
             # Ajout d'un client à la commande (User récupéré depuis la session)
-             $commande->getId($this->getUser());
-             $commande->getFirstname($this->getUser());
-             $commande->getChambre($this->getUser());
-             $commande->getChambre($this->getUser());
-             $commande->getDateArrival($this->getUser());
-             $commande->getDateDeparture($this->getUser());
-             $commande->getFirstname($this->getUser());
-             $commande->getLastname($this->getUser());
-             $commande->getPhone($this->getUser());
-             $commande->getEmail($this->getUser());
-             $commande->getFirstname($this->getUser());
-             $commande->getFirstname($this->getUser());
+             $commande->getId();
+             $commande->getFirstname();
+             $commande->getChambre();
+             $commande->getChambre();
+             $commande->getDateArrival();
+             $commande->getDateDeparture();
+             $commande->getFirstname();
+             $commande->getLastname();
+             $commande->getPhone();
+             $commande->getEmail();
+             $commande->getFirstname();
+             $commande->getFirstname();
 
                 $entityManager->persist($commande);
                 $entityManager->flush();
 
-                $this->addFlash('success', "Votre commande Admin a bien été ajoutée.");
-                return $this->redirectToRoute('create_commande');
+                $this->addFlash('success', "Votre commande Administrateur a bien été ajoutée.");
+                return $this->redirectToRoute('show_create_commande');
 
         } # end if ($form)
 
