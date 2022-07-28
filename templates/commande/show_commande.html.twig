@@ -8,7 +8,7 @@
 	<h1 class="text-center my-4">Gestion des commandes</h1>
     <div class="row">
 					<div class="col-6 mx-auto my-4">
-						<a href="{{ path('create_commande') }}" class="btn btn-primary">
+						<a href="{{ path('create_commande',{"id": commande.id}) ) }}" class="btn btn-primary">
 							<i class="fa-solid fa-plus"></i>
 							Ajouter une commande</a>
 				</div>
@@ -61,7 +61,7 @@
                             <a href="{{ path('show_commande', {"id": commande.id}) }}" class="text-info" title="Voir la commande"><i class="fa-solid fa-magnifying-glass"></i></a>
                             <a href="{{ path('update_commande', {"id": commande.id}) }}" class="text-info" title="Modifier la commande"><i class="fa-solid fa-pen-to-square"></i></a>
                             <a href="{{ path('soft_delete_commande', {'id': commande.id}) }}" class="text-info" title="Archiver l'article" onclick="return confirm('Voulez-vous archiver cette commande ?')"><i class="fa-solid fa-folder-arrow-down"></i>/a>
-                            <a href="{{ path('restore_commande', {'id': commande.id}) }}" class="text-info" title="Archiver l'article" onclick="return confirm('Voulez-vous restorer cet article ?')"><i class="fa-solid fa-trash-arrow-up"></i></a>
+                            <a href="{{ path('restore_commande', {'id': commande.id}) }}" class="text-info" title="Archiver la commande" onclick="return confirm('Voulez-vous restorer cette commande ?')"><i class="fa-solid fa-trash-arrow-up"></i></a>
                         </td>
                     </tr>
                 {% endfor %}
