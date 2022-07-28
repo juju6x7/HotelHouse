@@ -14,13 +14,13 @@ class CommandeController extends AbstractController
 {
 
 /**
-*@Route("/voir-commande_{id}", name="show_commande", methods={"GET"}))
+*@Route("/voir-commandes_{id}", name="show_commande", methods={"GET"}))
 */
 public function showCommande(EntityManagerInterface $entityManager): Response
 {
-$commande = $entityManager->getRepository(Commande::class)->findById();
+$commandes = $entityManager->getRepository(Commande::class)->findAll();
 return $this->render("/commande/show_commande.html.twig", [
-    'commande' => $commande,
+    'commandes' => $commandes
 ]);
 }
 
@@ -100,16 +100,6 @@ return $this->render("/commande/show_commande.html.twig", [
         ]); 
     } # end funct
 
-    /**
-     *@Route("/gestion-commande", name="gestion_commandes", methods={"GET|POST"}))
-     */
-    public function gestionCommandes(EntityManagerInterface $entityManager): Response
-    {
-        $commandes = $entityManager->getRepository(Commande::class)->findAll();
-        return $this->render("admin/form/show_commande.html.twig", [
-            'commandes' => $commandes,
-        ]);
-    }
 
      /**
      * @Route("/archiver-commande_{id}", name="soft_delete_commande", methods={"GET"})
