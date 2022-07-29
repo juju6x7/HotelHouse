@@ -5,7 +5,110 @@
 
 {% block body %}
 
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+<!-- CAROUSEL -->
+    <div class="container">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
+                    aria-label="Slide 6"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item drk active">
+                    <div class="slide1"></div>
+                    <img src="img/slider/chambre1.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Confort et tranquilité</h3>
+                        <p>Bienvenue sur le site de HouseHotel !</p>
+                    </div>
+                </div>
+                <div class="carousel-item drk">
+                    <img src="img/slider/chambre2.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Comme à la maison...</h3>
+                        <p>Petit-déjeuner 5* à savourer
+                            <br>au restaurant ou en chambre.
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel-item drk">
+                    <img src="img/slider/chambre3.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Pour vous !</h3>
+                        <p>Toute l'équipe de l'hôtel
+                            <br>aux petits soins durant votre séjour.
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel-item drk">
+                    <img src="img\slider\spa-ambiance-marocaine.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Un riad en plein Paris</h3>
+                        <p>Un parfum d'évasion
+                            <br>dans notre écrin au style marocain...
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel-item drk">
+                    <img src="img\slider\spa-galets.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Détente et volupté</h3>
+                        <p>Profitez du spa
+                            <br>et de nos soins experts.
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel-item drk">
+                    <img src="img/slider/chef.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Papilles en folies</h3>
+                        <p>Notre chef étoilé
+                            <br>vous régale.
+                        </p>
+                    </div>
+                </div>
+                {# <div class="carousel-item drk">
+                    <img src="img/chat-route.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>"J'ai été abandonné 
+                           <br> sur la route."</h3>
+                        <p>Je cherche un nouveau foyer, plus chaleureux...</p>
+                    </div>
+                </div>
+                <div class="carousel-item drk">
+                        <img src="img/chaton-joueur.jpg" class="d-block w-100 bg-info" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Tu veux jouer avec moi ?</h3>
+                            <p>J'ai besoin d'un compagnon pour m'amuser et me câliner.</p>
+                        </div>
+                    
+                </div> #}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div> <!-- FIN CONTAINER -->
+
+</div><!-- FIN CAROUSEL -->
+
+{# <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -39,5 +142,5 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-  {% endfor %}
+  {% endfor %} #}
 {% endblock %}
