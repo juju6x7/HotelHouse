@@ -25,7 +25,7 @@ class CommandeController extends AbstractController
     }
 
     /**
-     * @Route("/ajouter-une-commande_{id}", name="create_commande", methods={"GET|POST"})
+     * @Route("/ajouter-une-commande", name="create_commande", methods={"GET|POST"})
      */
     public function createCommande(Request $request, EntityManagerInterface $entityManager): Response
     {

@@ -94,9 +94,8 @@ class CommandeFormType extends AbstractType
                     'expanded' => true,
                     'choices' => [
                         'Homme' => 'homme',
-                        'Femme' => 'femme',
-                        'Autre' => 'autre'
-                    ],
+                        'Femme' => 'femme'
+                        ],
                     'choice_attr' => [
                         "Homme" => ['selected']
                     ],
