@@ -19,7 +19,7 @@ class CommandeController extends AbstractController
     public function showCommande(EntityManagerInterface $entityManager): Response
     {
     $commandes = $entityManager->getRepository(Commande::class)->findAll();
-    return $this->render("/commande/show_commande.html.twig", [
+    return $this->render("/admin/admin_commande/show_commande.html.twig", [
     'commandes' => $commandes
     ]);
     }
@@ -63,7 +63,7 @@ class CommandeController extends AbstractController
         } # end if ($form)
 
         # 4 - Création de la vue
-        return $this->render("commande\create_commande.html.twig", [
+        return $this->render("admin\admin_commande\commande\create_commande.html.twig", [
             'form' => $form->createView(),
     
         ]);
