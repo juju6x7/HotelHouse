@@ -1,3 +1,166 @@
-body {
-    background-color: lightgray;
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+/* font-family: 'Tangerine', cursive; */
+
+
+h2{
+  font-family: 'Tangerine', cursive;
+  font-size: 4rem !important;
+  color: #d8ad00 !important;
+}
+
+.bg-gold{
+  background-color:#d8ad00 !important;
+}
+
+/* ***************** NAVBAR ****************** */
+
+.classynav a{
+  font-family: 'Tangerine', cursive;
+  font-size: 2rem !important;
+  color: #d8ad00 !important;
+  padding-right: 1vw !important;
+  padding-left: 1vw !important;
+}
+
+.dropdown-toggle::after{
+  font-size: 1rem !important;
+}
+
+.nav-link:hover{
+  font-weight: bold;
+  background-color:#d8ad00 !important;
+  color: black !important;
+}
+
+.nav-item:visited{
+  font-weight: bold !important; 
+  background-color:#d8ad00 !important;
+  color: black !important;
+}
+
+.dropdown-menu.goldy .dropdown-item:hover{
+  background-color:#d8ad00 !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+.dropdown-item:hover{
+  background-color:rgb(60, 112, 255);
+  color: white !important;
+}
+
+/* ***************** End NAVBAR ****************** */
+
+/* ***************** SPA ****************** */
+.shape{
+  border-radius: 15px 50px; 
+}
+
+.thalgo{
+  font-family: 'Tangerine', cursive !important;
+  font-size: 4rem !important;
+  color: white !important;
+}
+
+.sea{
+  background-color: #0a93b1 !important;
+}
+
+a.soins{
+  text-decoration: none;
+  color: white;
+}
+
+a.soins:hover{
+  font-weight: bold;
+}
+
+.spa{
+border-radius: 75px;
+}
+
+/* ***************** End SPA ****************** */
+
+/* ***************** CONTACT ****************** */
+
+.wrapper.contact{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.contacts{
+  color: white !important;
+}
+
+.cts{
+  font-family: 'Tangerine', cursive !important;
+  font-size: 3.5rem !important;
+  font-weight: bold;
+}
+
+.dbox a{
+  text-decoration: none !important;
+  color: white !important;
+  padding-left: 1rem;
+}
+
+.dbox a:hover{
+  color: black !important;
+  font-weight: bold;
+}
+
+.form-control-lg {
+  font-size: 1rem;
+}
+.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 1.15;
+  padding-left: 1.75em;
+  padding-right: .75em;
+}
+
+.btn.bg-gold{
+  color:white;
+}
+
+.btn.bg-gold:hover{
+  background-color: black !important;
+  color:#d8ad00 !important;
+  font-weight: bold;
+}
+
+/* ***************** End CONTACT ****************** */
+
+
+/* ***************** FOOTER ****************** */
+
+.bg-dark{
+  align-items: center;
+}
+
+/* .rs{
+  padding-left: 20px;
+} */
+
+.fa-brands{
+  font-size: 2rem;
+  padding-right: 10px;
+  color: #d8ad00 !important;
+}
+
+.fa-brands:hover{
+  font-size: 2.3rem;
+  padding-right: 10px;
+  color: black !important;
+}
+
+.cgv{
+  font-size: 0.8rem;
+}
+
+.footerband{
+  text-decoration: none;
+  font-size: 0.9rem;
+  align-items: center;
+  color: white;
+  padding: 10px;
 }
