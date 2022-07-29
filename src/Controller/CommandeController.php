@@ -63,7 +63,7 @@ class CommandeController extends AbstractController
         } # end if ($form)
 
         # 4 - Création de la vue
-        return $this->render("commande\show_commande.html.twig", [
+        return $this->render("commande\create_commande.html.twig", [
             'form' => $form->createView(),
     
         ]);
