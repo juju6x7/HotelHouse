@@ -48,5 +48,38 @@ public function register(Request $request, EntityManagerInterface $entityManager
         
     }
 
-   
+    // /**
+    //  * @Route("/user/changer-mot-de-passe", name="change_password", methods={"GET|POST"})
+    //  */
+    // public function changePassword(EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordHasher, Request $request): Response
+    // {
+    //     $form = $this->createForm(ChangePasswordFormType::class)->handleRequest($request);
+
+    //     if ($form->isSubmitted() && $form->isValid()) {
+
+            
+    //         $membre = $entityManager->getRepository(Membre::class)->findOneBy(['id' => $this->getUser()]);
+
+    //         $membre->setUpdatedAt(new DateTime());
+
+    //         $membre->setPassword($passwordHasher
+    //         ->hashPassword($membre, 
+    //         $form->get('plainPassword')->getData()
+
+    //             )
+    //         );
+
+    //         $entityManager->persist($membre);
+    //         $entityManager->flush();
+
+    //         $this->addFlash('success', 'Votre mot de passe a été bien changé');
+    //         return $this->redirectToRoute('show_membre');
+    //     }
+
+    //     return $this->render('user/change_password.html.twig', [
+    //         'form' => $form->createView(),
+            
+    //     ]);
+    // }
 }
+

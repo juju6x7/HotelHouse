@@ -61,7 +61,7 @@
 							<a href=" {{ path('update_membre', {"id": membre.id}) }}" class="text-info" title="Modifier le membre">
 								<i class="fa fa-edit"></i>
 							</a>
-							<a href="{{ path('hard_delete_article', {"id" : membre.id}) }}" class="text-danger" title="Archiver le membre" onclick="return confirm('Voulez-vous supprimer ce membre ?')">
+							<a href="{{ path('hard_delete_membre', {"id" : membre.id}) }}" class="text-danger" title="Archiver le membre" onclick="return confirm('Voulez-vous supprimer ce membre ?')">
 								<i class="fa fa-trash"></i>
 							</a>
 						</td>

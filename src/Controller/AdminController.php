@@ -5,7 +5,6 @@ namespace App\Controller;
 use DateTime;
 use App\Entity\Membre;
 use App\Form\MembreFormType;
-use App\Form\RegisterFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,7 +21,7 @@ class AdminController extends AbstractController
     /**
      * @Route("/voir-membre", name="show_membre", methods={"GET"})
      */
-    public function showMembre(Request $request, EntityManagerInterface $entityManager): Response
+    public function showMembre(EntityManagerInterface $entityManager): Response
     {
         try {
             $this->denyAccessUnLessGranted('ROLE_ADMIN');
@@ -32,7 +31,7 @@ class AdminController extends AbstractController
         }
 
         $membres = $entityManager->getRepository(Membre::class)->findAll();
-        return $this->render("admin/show_membre.html.twig", [
+        return $this->render("membre/profile/show_membre.html.twig", [
             'membres' => $membres,
         ]);
     }
@@ -51,26 +50,25 @@ class AdminController extends AbstractController
 
             $membre->setUpdatedAt(new DateTime());
 
+            $entityManager->persist($membre);
+            $entityManager->flush();
+
+
+            $this->addFlash('success', "Le membre a été modifié avec succès !");
+            return $this->redirectToRoute('show_membre');
         }
-
-        $entityManager->persist($membre);
-        $entityManager->flush();
-
         $membres = $entityManager->getRepository(Membre::class)->findAll();
 
         return $this->render("admin/form/gestion_membre.html.twig", [
             'form' => $form->createView(),
             'membres' => $membres
-        ]); 
-        
-        $this->addFlash('success', "Le membre a bien été supprimé de la base de données");
-        return $this->redirectToRoute('show_membre');
+        ]);
     } # end function updatemembre
 
     /**
-     * @Route("/supprimer-membre_{id}", name="hard_delete_article", methods={"GET"})
+     * @Route("/supprimer-membre_{id}", name="hard_delete_membre", methods={"GET"})
      */
-    public function hardDeleteArticle(Membre $membre, EntityManagerInterface $entityManager): RedirectResponse
+    public function hardDeleteMembre(Membre $membre, EntityManagerInterface $entityManager): RedirectResponse
     {
 
         $entityManager->remove($membre);
