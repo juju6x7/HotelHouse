@@ -7,28 +7,25 @@
 
 	<h1 class="text-center my-4">Réservation de la chambre {id}</h1>
 
-		<div class="row">
-			<div class="col-4 mx-auto my-4">
-				<p class="text-center">
+	<div class="row">
+		<div class="col-4 mx-auto my-4">
+			<p class="text-center">
+				{{ chambre.title }}
+			</p>
 
-					{{ chambre.title }}
+			<p class="text-center">
+				{{ chambre.descriptionShort }}
+			</p>
+			<p class="text-center">
 
-				</p>
-				<p class="text-center">
+				{{ chambre.descriptionLong }}
 
-					{{ chambre.descriptionShort }}
+			</p>
+		</div>
+		<div class="col-4 mx-auto my-4">
+			<a href"">
+				<img src=" {{ asset('uploads/' ~ chambre.photo) }}" width='300' height='200' alt=""></a>
+		</div>
 
-				</p>
-				<p class="text-center">
-
-					{{ chambre.descriptionLong }}
-
-				</p>
-			</div>
-			<div class="col-4 mx-auto my-4">
-				<a href"">
-					<img src=" {{ asset('uploads/' ~ chambre.photo) }}" width='300' height='200' alt=""></a>
-			</div>
-
-
+	</div>
 	{% endblock %}
