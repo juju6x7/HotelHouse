@@ -74,6 +74,12 @@ class Commande
      */
     private $deletedAt;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Membre::class, inversedBy="commandes")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $client;
+
    
 
     public function getId(): ?int
@@ -210,6 +216,18 @@ class Commande
     public function setDeletedAt(?\DateTimeInterface $deletedAt): self
     {
         $this->deletedAt = $deletedAt;
+
+        return $this;
+    }
+
+    public function getClient(): ?Membre
+    {
+        return $this->client;
+    }
+
+    public function setClient(?Membre $client): self
+    {
+        $this->client = $client;
 
         return $this;
     }

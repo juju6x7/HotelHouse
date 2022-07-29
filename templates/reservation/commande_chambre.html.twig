@@ -1,3 +1,9 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Confirmer réservation{% endblock %}
+
+{% block body %}
+
 <div class="row">
 		<div class="col-8 mx-auto">
 			{{ form_start(form) }}
@@ -9,14 +15,9 @@
                 <div class="row">
                     <div class="col-6">{{ form_row(form.phone) }}</div>
                     <div class="col-6">{{ form_row(form.email) }}</div>
+
                 </div>
 
-        <div class="row">
-					<div class="col-4 mx-auto my-4">
-						<a href="{{ path('default_home') }}" class="btn btn-primary">
-							<i class="fa-solid fa-plus"></i>
-							Réserver une chambre</a>
-				
-				</div>
-
 			{{ form_end(form) }}
+
+            {% endblock %}
