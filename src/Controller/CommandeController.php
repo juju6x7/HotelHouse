@@ -15,20 +15,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class CommandeController extends AbstractController
 {
     /**
-     * @Route("/commande-chambre", name="commande_chambre", methods={"GET|POST"})
+     * @Route("/commande-chambre/{id}", name="commande_chambre", methods={"GET|POST"})
      */
-    public function reservationChambre(Request $request, EntityManagerInterface $entityManager): Response
+    public function reservationChambre(Chambre $chambre, Request $request, EntityManagerInterface $entityManager): Response
     {
+
         $commande = new Commande();
 
         $form = $this->createForm(ReservationsFormType::class, $commande)
             ->handleRequest($request);
-
+        
         if($form->isSubmitted() && $form->isValid()) {
 
             $commande->setCreatedAt(new DateTime());
             $commande->setUpdatedAt(new DateTime());
-
+            $commande->setChambre($chambre);
                 $entityManager->persist($commande);
                 $entityManager->flush();
 
