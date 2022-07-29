@@ -38,7 +38,7 @@
 				{% for slider in sliders %}
 					<tr>
 						<td>{{ slider.id }}</td>
-						<td ><img src=" {{ asset('uploads/' ~ slider.photo) }}" width='300' height='200' alt=""></td>
+						<td ><img src="{{ asset('uploads/' ~ slider.photo) }}" width='300' height='200' alt=""></td>
 						<td>{{ slider.ordre }}</td>
 						<td>{{ slider.createdAt | date('d/m/Y') }}</td>
 						<td>

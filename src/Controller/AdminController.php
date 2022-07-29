@@ -79,4 +79,5 @@ class AdminController extends AbstractController
         $this->addFlash('success', "Le membre a bien été supprimé de la base de données");
         return $this->redirectToRoute('show_membre');
     }
+
 }
