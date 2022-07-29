@@ -6,21 +6,6 @@
 {% block body %}
 
 	<h1 class="text-center my-4">Visualisation du slide</h1>
-
-	<div class="row">
-		<div class="col-6 mx-auto">{% include 'include/_flashes.html.twig' %}
-		</div>
-	</div>
-
-	{# <div class="row mx-auto text-center">
-				<div class="col-12">
-					<a href="#" class="btn btn-warning text-center">
-						<i class="fa fa-trash"></i>
-						Supprimer un slider</a>
-				</div>
-			</div> #}
-</div>
-
 <div class="row">
 	<div class="col-12 mx-auto my-4">
 
@@ -35,19 +20,19 @@
 				</tr>
 			</thead>
 			<tbody>
-					<tr>
-						<td>{{ slider.id }}</td>
-						<td ><img src=" {{ asset('uploads/' ~ slider.photo) }}" width='300' height='200' alt=""></td>
-						<td>{{ slider.ordre }}</td>
-						<td>{{ slider.createdAt | date('d/m/Y') }}</td>
-						<td>
-							
-
-							<a href="{{ path('hard_delete_slider', {"id" : slider.id}) }}" class="text-danger" title="Archiver le slider" onclick="return confirm('Voulez-vous supprimer ce slider ?')">
-								<i class="fa fa-trash"></i>
-							</a>
-						</td>
-					</tr>
+				<tr>
+					<td>{{ slider.id }}</td>
+					<td><img src=" {{ asset('uploads/' ~ slider.photo) }}" width='300' height='200' alt=""></td>
+					<td>{{ slider.ordre }}</td>
+					<td>{{ slider.createdAt | date('d/m/Y') }}</td>
+					<td>
+						<a href="{{ path('hard_delete_slider', {"id" : slider.id}) }}" class="text-danger" title="Archiver le slider" onclick="return confirm('Voulez-vous supprimer ce slider ?')">
+							<i class="fa fa-trash"></i>
+						</a>
+					</td>
+				</tr>
 			</tbody>
-
-            {% endblock %}
+		</table>
+	</div>
+</div>
+{% endblock %}

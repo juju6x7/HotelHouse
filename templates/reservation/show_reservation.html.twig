@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos chambres - HouseHotel
+{% endblock %}
+
+{% block body %}
+
+	<h1 class="text-center my-4">Nos chambres</h1>
+
+
+	{% for chambre in chambres %}
+
+
+		<div class="row">
+			<div class="col-4 mx-auto my-4">
+				<p class="text-center">
+
+					{{ chambre.title }}
+
+				</p>
+				<p class="text-center">
+
+					{{ chambre.descriptionShort }}
+
+				</p>
+				<p class="text-center">
+
+					{{ chambre.descriptionLong }}
+
+				</p>
+			</div>
+			<div class="col-4 mx-auto my-4">
+				<a href"">
+					<img src=" {{ asset('uploads/' ~ chambre.photo) }}" width='300' height='200' alt=""></a>
+			</div>
+
+		
+				<div class="row">
+					<div class="col-4 mx-auto my-4">
+						<a href="{{ path('commande_chambre') }}" class="btn btn-primary">
+							<i class="fa-solid fa-plus"></i>
+							Réserver une chambre</a>
+				
+				</div>
+			</div>
+
+		{% endfor %}
+
+
+	{% endblock %}
