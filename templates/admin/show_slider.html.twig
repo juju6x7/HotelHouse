@@ -22,7 +22,7 @@
 </div>
 
 <div class="row">
-	<div class="col-12 mx-auto my-4">
+	<div class="col-6 mx-auto my-4">
 
 		<table class="table">
 			<thead>
@@ -42,34 +42,23 @@
 						<td>{{ slider.ordre }}</td>
 						<td>{{ slider.createdAt | date('d/m/Y') }}</td>
 						<td>
-							<a href=" {{ path('show_slider_{id}', {"id": slider.id}) }}" class="text-info" title="Visualiser le slider">
-							<i class="fa-solid fa-magnifying-glass"></i>
-							</a>
+							<a href=" {{ path('show_slider_{id}', {"id": slider.id}) }}" class="text-info mx-1" title="Visualiser le slider"><i class="fa-solid fa-magnifying-glass"></i></a>
 							
-							<a href=" {{ path('update_slider', {"id": slider.id}) }}" class="" title="Modifier le slider">
-							<i class="fa fa-edit"></i>
-							</a>
+							<a href=" {{ path('update_slider', {"id": slider.id}) }}" class="mx-1" title="Modifier le slider"><i class="fa fa-edit"></i></a>
 
-							<a href="{{ path('hard_delete_slider', {"id": slider.id}) }}" class="text-danger" title="Archiver le slider" onclick="return confirm('Voulez-vous supprimer ce slider ?')">
-							<i class="fa fa-trash"></i>
-							</a>
+							<a href="{{ path('hard_delete_slider', {"id": slider.id}) }}" class="text-danger mx-1" title="Archiver le slider" onclick="return confirm('Voulez-vous supprimer ce slider ?')"><i class="fa fa-trash"></i></a>
 						</td>
 					</tr>
 				{% endfor %}
 			</tbody>
 		</table>
-	</div>
-</div>
-
-	<div class="row">
-		<div class="col-11 mx-auto my-4">
-
+			<br>
 					{{ form_start(form) }}
 
 					<div class="row">
 
-					<div class="col-5">{{ form_row(form.photo) }}</div>
-					<div class="col-5">{{ form_row(form.ordre) }}</div>
+					<div class="col-7">{{ form_row(form.photo) }}</div>
+					<div class="col-3">{{ form_row(form.ordre) }}</div>
 
 
 					{{ form_end(form) }}
@@ -78,6 +67,5 @@
 			</div>
 		</div>
 </div>
-
 
 {% endblock %}
