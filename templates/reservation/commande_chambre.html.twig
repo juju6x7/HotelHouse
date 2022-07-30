@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Confirmer réservation
+{% block title %}Confirmer réservation - HouseHotel
 {% endblock %}
 
 {% block body %}
@@ -13,14 +13,14 @@
 				<div class="col-6">{{ form_row(form.firstname) }}</div>
 				<div class="col-6">{{ form_row(form.lastname) }}</div>
 			</div>
+
 			<div class="row">
 				<div class="col-6">{{ form_row(form.phone) }}</div>
 				<div class="col-6">{{ form_row(form.email) }}</div>
-
 			</div>
-            {{ form_end(form) }}
-        </div>
-    </div>
-			
 
-		{% endblock %}
+			{{ form_end(form) }}
+		</div>
+	</div>
+
+{% endblock %}

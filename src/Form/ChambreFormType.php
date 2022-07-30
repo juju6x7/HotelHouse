@@ -26,7 +26,7 @@ class ChambreFormType extends AbstractType
                 'label' => "Description longue"
             ])
             ->add('photo', FileType::class, [
-                'label' => 'Photo',
+                'label' => "Photo",
                 'data_class' => null,
                 'attr' => [
                     'data-default-file' => $options['photo']

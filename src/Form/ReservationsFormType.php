@@ -20,16 +20,18 @@ class ReservationsFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-        ->add('dateDeparture', DateType::class, [
-            'widget' => 'choice',
-            'input'  => 'datetime_immutable'
-        ])
-        ->add('dateArrival', DateType::class, [
-            'widget' => 'choice',
-            'input'  => 'datetime_immutable'
-        ])
-        
-        ->add('firstname', TextType::class, [
+            ->add('dateArrival', DateType::class, [
+                'label' => "Date d'arrivée",
+                'widget' => 'choice',
+                'input'  => 'datetime_immutable'
+            ])
+
+            ->add('dateDeparture', DateType::class, [
+                'label' => "Date de départ",
+                'widget' => 'choice',
+                'input'  => 'datetime_immutable'
+            ])
+            ->add('firstname', TextType::class, [
                 'label' => 'Prénom',
                 'constraints' => [
                     new NotBlank([
@@ -43,7 +45,6 @@ class ReservationsFormType extends AbstractType
                     ]),
                 ],
             ])
-
             ->add('lastname', TextType::class, [
                 'label' => 'Nom',
                 'constraints' => [
@@ -88,7 +89,6 @@ class ReservationsFormType extends AbstractType
                         'maxMessage' => "Votre email doit comporter {{ limit }} caractères maximum."
                     ]),
                 ],
-              
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Valider',
@@ -97,7 +97,6 @@ class ReservationsFormType extends AbstractType
                     'class' => 'd-block col-3 my-3 mx-auto btn btn-success'
                 ]
             ]);
-        
     }
 
     public function configureOptions(OptionsResolver $resolver): void

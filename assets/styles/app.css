@@ -8,6 +8,16 @@ h2{
   color: #d8ad00 !important;
 }
 
+h4{
+  font-family: 'Tangerine', cursive !important;
+  font-size: 3rem !important;
+  color: #d8ad00 !important;
+}
+
+.gold{
+color:#d8ad00 !important;
+}
+
 .bg-gold{
   background-color:#d8ad00 !important;
 }
@@ -37,7 +47,7 @@ h2{
 
 .classynav a{
   font-family: 'Tangerine', cursive;
-  font-size: 2rem !important;
+  font-size: 2.5rem !important;
   color: #d8ad00 !important;
   padding-right: 1vw !important;
   padding-left: 1vw !important;
