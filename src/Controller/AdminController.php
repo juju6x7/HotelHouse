@@ -63,7 +63,7 @@ class AdminController extends AbstractController
             'form' => $form->createView(),
             'membres' => $membres
         ]);
-    } # end function updatemembre
+    } # end function updateMembre
 
     /**
      * @Route("/supprimer-membre_{id}", name="hard_delete_membre", methods={"GET"})
