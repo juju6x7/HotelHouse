@@ -12,11 +12,11 @@
 		</div>
 	</div>
 
-	<div class="row">
+	{# <div class="row">
 		<div class="col-12 ms-3">
 			<a href="{{ path('show_dashboard' )}}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Retour au Tableau de bord</a>
 		</div>
-	</div>
+	</div> #}
 
     <div class="row">
 		<div class="col-10 mx-auto my-4">
@@ -44,13 +44,13 @@
 						<td>{{ chambre.title }}</td>
 						<td>{{ chambre.descriptionShort }}</td>
 						<td>{{ chambre.descriptionLong }}</td>
-						<td><img src=" {{ asset('uploads/' ~ chambre.photo) }}" alt=""></td>
+						<td><img src="{{ asset('uploads/' ~ chambre.photo) }}" alt=""></td>
 						<td>{{ chambre.priceDay }}</td>
 						<td>{{ chambre.createdAt | date('d/m/Y') }}</td>
 						<td>{{ chambre.updatedAt | date('d/m/Y') }}</td>
 						<td>
 
-							<a href=" {{ path('update_chambre', {"id": chambre.id}) }}" class="text-info" title="Modifier la chambre">
+							<a href="{{ path('update_chambre', {"id": chambre.id}) }}" class="text-info" title="Modifier la chambre">
 								<i class="fa fa-edit"></i>
 							</a>
 							<a href="{{ path('hard_delete_chambre', {"id" : chambre.id}) }}" class="text-danger" title="Supprimer la chambre" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette chambre ?')">

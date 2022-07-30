@@ -10,11 +10,11 @@
         </div>
     </div>
 
-    <div class="row">
+    {# <div class="row">
         <div class="col-12 ms-3">
             <a href="{{ path('show_dashboard') }}"><i class="fa-solid fa-arrow-left"></i> Retour au Dashboard</a>
         </div>
-    </div>
+    </div> #}
 
     <div class="row">
         <div class="col-10 mx-auto my-4">
@@ -52,12 +52,12 @@
                         <td>{{ commande.email}}</td>
                         <td>{{ commande.phone}}</td>
                         <td>{{ commande.createdAt | date('d/m/Y') }}</td>
-                        <td>
+                        {# <td>
                             <a href="{{ path('show_commande', {"id": commande.id}) }}" class="text-info" title="Voir la commande"><i class="fa-solid fa-magnifying-glass"></i></a>
                             <a href="{{ path('update_commande', {"id": commande.id}) }}" class="text-info" title="Modifier la commande"><i class="fa-solid fa-pen-to-square"></i></a>
                             <a href="{{ path('soft_delete_commande', {'id': commande.id}) }}" class="text-info" title="Archiver l'article" onclick="return confirm('Voulez-vous archiver cette commande ?')"><i class="fa-solid fa-folder-arrow-down"></i>/a>
                             <a href="{{ path('restore_commande', {'id': commande.id}) }}" class="text-info" title="Archiver l'article" onclick="return confirm('Voulez-vous restorer cet article ?')"><i class="fa-solid fa-trash-arrow-up"></i></a>
-                        </td>
+                        </td> #}
                     </tr>
                      {% else %}
                     <tr>

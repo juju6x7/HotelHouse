@@ -42,9 +42,9 @@
 						<td>{{ slider.ordre }}</td>
 						<td>{{ slider.createdAt | date('d/m/Y') }}</td>
 						<td>
-							<a href=" {{ path('show_slider_{id}', {"id": slider.id}) }}" class="text-info mx-1" title="Visualiser le slider"><i class="fa-solid fa-magnifying-glass"></i></a>
+							<a href="{{ path('show_slider_{id}', {"id": slider.id}) }}" class="text-info mx-1" title="Visualiser le slider"><i class="fa-solid fa-magnifying-glass"></i></a>
 							
-							<a href=" {{ path('update_slider', {"id": slider.id}) }}" class="mx-1" title="Modifier le slider"><i class="fa fa-edit"></i></a>
+							<a href="{{ path('update_slider', {"id": slider.id}) }}" class="mx-1" title="Modifier le slider"><i class="fa fa-edit"></i></a>
 
 							<a href="{{ path('hard_delete_slider', {"id": slider.id}) }}" class="text-danger mx-1" title="Archiver le slider" onclick="return confirm('Voulez-vous supprimer ce slider ?')"><i class="fa fa-trash"></i></a>
 						</td>

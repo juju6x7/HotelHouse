@@ -25,15 +25,14 @@
 			</div>
 
 			<div class="col-4 mx-auto my-4">
-				<img class="round-corner" src=" {{ asset('uploads/' ~ chambre.photo) }}" width="600px" height="400px" alt="">
+				<img class="round-corner" src="{{ asset('uploads/' ~ chambre.photo) }}" width="600px" height="400px" alt="">
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-4 mx-auto my-4">
-				<a href="{{ path('commande_chambre', {'id': chambre.id}) }}" class="btn btn-primary">
-					<i class="fa-solid fa-plus"></i>
-					Réserver une chambre</a>
+				{# <a href="{{ path('commande_chambre', {'id': chambre.id}) }}" class="btn btn-primary"><i class="fa-solid fa-plus"></i></i>Réserver une chambre</a> #}
+				<a href="#" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Réserver une chambre</a>
 			</div>
 		</div>
 	{% endfor %}

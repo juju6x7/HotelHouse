@@ -49,9 +49,10 @@
 							<td>{{ commande.email}}</td>
 							<td>{{ commande.createdAt | date('d/m/Y') }}</td>
 							<td>
-								<a href="{{ path('create_commande')}}" class="btn btn-primary">
-									<i class="fa-solid fa-plus"></i>
+								{# <a href="{{ path('create_commande') }}" class="btn btn-primary">
+									<i class="fa-solid fa-plus"></i> #}
 								{# </a>
+								
 								<a href="{{ path('show_commande', {"id": commande.id}) }}" class="text-info" title="Voir la commande">
 									<i class="fa-solid fa-magnifying-glass"></i>
 								</a>
