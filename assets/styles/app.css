@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 /* font-family: 'Tangerine', cursive; */
 
-
 h2{
   font-family: 'Tangerine', cursive;
   font-size: 4rem !important;
@@ -25,6 +24,11 @@ color:#d8ad00 !important;
 .btn-lg{
   font-size: 1rem;
 }
+
+.round-corner{
+  border-radius: 75px;
+  }
+  
 
 /* ***************** SLIDER ****************** */
 
@@ -121,9 +125,6 @@ a.soins:hover{
   font-weight: bold;
 }
 
-.spa{
-border-radius: 75px;
-}
 
 /* ***************** End SPA ****************** */
 
