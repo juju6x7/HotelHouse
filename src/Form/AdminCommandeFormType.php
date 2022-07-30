@@ -96,8 +96,9 @@ class AdminCommandeFormType extends AbstractType
                 'label' => 'Civilité',
                 'expanded' => true,
                 'choices' => [
-                    'Homme' => 'homme',
-                    'Femme' => 'femme'
+                    'Homme' => 'Homme',
+                    'Femme' => 'Femme',
+                    'Autre' => 'Autre'
                 ],
                 'choice_attr' => [
                     "Homme" => ['selected']

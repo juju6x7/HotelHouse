@@ -94,9 +94,9 @@ class RegisterFormType extends AbstractType
                 'label' => 'Civilité',
                 'expanded' => true,
                 'choices' => [
-                    'Homme' => 'homme',
-                    'Femme' => 'femme',
-                    'Autre' => 'autre'
+                    'Homme' => 'Homme',
+                    'Femme' => 'Femme',
+                    'Autre' => 'Autre'
                 ],
                 'choice_attr' => [
                     "Homme" => ['selected']
