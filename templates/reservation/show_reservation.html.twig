@@ -6,35 +6,44 @@
 {% block body %}
 
 	<h1 class="text-center my-4">Nos chambres</h1>
-
-
+	<div class="row">
+					<div class="col-8 mx-auto text-center">
+						<p>Les 39 chambres de l’hôtel se déploient sur les 7 étages de la maison.</p>
+						Toutes différentes mais d’inspiration identique, elles ont en héritage <br>
+						le charme de cette maison parisienne historique.</p>
+						<p>Sur rue ou sur cour, elles sont paisibles et douillettes, avec du parquet <br> 
+						et du carrelage soigné dans les salles de bain.</p>
+					</div>
+				</div>
 	{% for chambre in chambres %}
 
 		<div class="row">
 			<div class="col-8 mx-auto">
-			<div class="row">
-				<div class="col-5 mx-auto my-4 text-center">
-				<br>
-					<h3>
-						{{ chambre.title }}
-					</h3>
+			
 
-					<h4 class="my-4">
-						{{ chambre.descriptionShort }}
-					</h4>
+				<div class="row">
+					<div class="col-5 mx-auto my-4 text-center">
+						<br>
+						<h3>
+							{{ chambre.title }}
+						</h3>
 
-					{{ chambre.descriptionLong }}
-					<br>
-					{# <a href="{{ path('commande_chambre', {'id': chambre.id}) }}" class="btn btn-primary"><i class="fa-solid fa-plus"></i></i>Réserver une chambre</a> #}
-					<a href="{{ path('commande_chambre', {'id': chambre.id}) }}" class="btn btn-primary my-4">
-						<i class="fa-solid fa-plus"></i>
-						Réserver une chambre</a>
+						<h4 class="my-4">
+							{{ chambre.descriptionShort }}
+						</h4>
+
+						{{ chambre.descriptionLong }}
+						<br>
+						{# <a href="{{ path('commande_chambre', {'id': chambre.id}) }}" class="btn btn-primary"><i class="fa-solid fa-plus"></i></i>Réserver une chambre</a> #}
+						<a href="{{ path('commande_chambre', {'id': chambre.id}) }}" class="btn btn-primary my-4">
+							<i class="fa-solid fa-plus"></i>
+							Réserver une chambre</a>
+					</div>
+
+					<div class="col-5 mx-auto my-4">
+						<img class="round-corner" src="{{ asset('uploads/' ~ chambre.photo) }}" width="600px" height="400px" alt="">
+					</div>
 				</div>
-
-				<div class="col-5 mx-auto my-4">
-					<img class="round-corner" src="{{ asset('uploads/' ~ chambre.photo) }}" width="600px" height="400px" alt="">
-				</div>
-			</div>
 			</div>
 		</div>
 	{% endfor %}
