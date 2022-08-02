@@ -34,7 +34,7 @@ class CommandeController extends AbstractController
                 $entityManager->flush();
 
                 $this->addFlash('success', "La commande a bien été validée !");
-                return $this->redirectToRoute('dafault_home');
+                return $this->redirectToRoute('default_home');
 
         } # end if ($form)
 
