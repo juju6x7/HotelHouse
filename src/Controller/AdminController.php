@@ -31,7 +31,7 @@ class AdminController extends AbstractController
         }
 
         $membres = $entityManager->getRepository(Membre::class)->findAll();
-        return $this->render("membre/profile/show_membre.html.twig", [
+        return $this->render("admin/show_membre.html.twig", [
             'membres' => $membres,
         ]);
     }

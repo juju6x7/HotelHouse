@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des membres - HouseHotel
+{% endblock %}
+
+{% block body %}
+
+	<div class="row">
+		<div class="col-6 mx-auto">{% include 'include/_flashes.html.twig' %}
+		</div>
+	</div>
+
+	{# <div class="row mx-auto text-center">
+			<div class="col-12">
+				<a href="#" class="btn btn-warning text-center">
+					<i class="fa fa-trash"></i>
+					Supprimer un membre</a>
+			</div>
+		</div> #}
+
+	<div class="row">
+		<div class="col-8 mx-auto my-4">
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Email</th>
+						<th>Roles</th>
+						<th>Pseudo</th>
+						<th>Nom</th>
+						<th>Prénom</th>
+						<th>Sexe</th>
+						<th>Date de création</th>
+						<th>Date de modification</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for membre in membres %}
+						<tr>
+							<td>{{ membre.id }}</td>
+							<td>{{ membre.email }}</td>
+							<td>{{ membre.roles | first }}</td>
+								{# {% for role in membre.roles %}
+															{{role}}
+															{% endfor %} #}
+							<td>{{ membre.pseudo }}</td>
+							<td>{{ membre.lastname }}</td>
+							<td>{{ membre.firstname }}</td>
+							<td>{{ membre.civility }}</td>
+							<td>{{ membre.createdAt | date('d/m/Y') }}</td>
+							<td>{{ membre.updatedAt | date('d/m/Y') }}</td>
+							<td>
+								<a href="{{ path('update_membre', {"id": membre.id}) }}" class="text-info mx-1" title="Modifier le membre"><i class="fa fa-edit"></i></a>
+								<a href="{{ path('hard_delete_membre', {"id" : membre.id}) }}" class="text-danger" title="Archiver le membre" onclick="return confirm('Voulez-vous supprimer ce membre ?')"><i class="fa fa-trash"></i></a>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+{% endblock %}
