@@ -21,7 +21,7 @@
 					<a class="nav-link" href="{{ path('show_spa') }}">Spa</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Avis</a>
+					<a class="nav-link" href="{{ path('show_avis') }}">Avis</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{{ path('show_hotel') }}">L'hôtel</a>
@@ -79,7 +79,7 @@
 						<a class="nav-link text-light" href="#">Espace perso</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-danger" href="{{ path('app_logout') }}">
+						<a class="nav-link text-danger" href="{{ path('app_logout') }}" title="Déconnexion">
 							<i class="fa-solid fa-right-from-bracket"></i>
 						</a>
 					</li>

@@ -1,0 +1,362 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page Accueil
+{% endblock %}
+
+{% block body %}
+<style>
+body {
+	font-family: "Open Sans", sans-serif;
+}
+h2 {
+	color: #000;
+	font-size: 26px;
+	font-weight: 300;
+	text-align: center;
+	position: relative;
+	margin: 30px 0 60px;
+}
+h1::after {
+	content: "";
+	width: 100px;
+	position: absolute;
+	margin: 0 auto;
+	height: 4px;
+	border-radius: 1px;
+	background: #0a93b1;
+	left: 0;
+	right: 0;
+	bottom: -20px;
+}
+.carousel .carousel-item {
+	color: #999;
+	overflow: hidden;
+	min-height: 120px;
+	font-size: 13px;
+}
+.carousel .media {
+	position: relative;
+	padding: 0 0 0 20px;
+}
+.carousel .media img {
+	width: 10f0px;
+	height: 100px;
+	display: block;
+	border-radius: 50%;
+}
+.carousel .testimonial-wrapper {
+	padding: 0 10px;
+}
+.carousel .testimonial {
+	color: #808080;
+	position: relative;
+	padding: 15px;
+	background: #f1f1f1;
+	border: 1px solid #efefef;
+	border-radius: 3px;
+	margin-bottom: 15px;
+}
+.carousel .testimonial::after {
+	content: "";
+	width: 15px;
+	height: 15px;
+	display: block;
+	background: #f1f1f1;
+	border: 1px solid #efefef;
+	border-width: 0 0 1px 1px;
+	position: absolute;
+	bottom: -8px;
+	left: 46px;
+	transform: rotateZ(-46deg);
+}
+.carousel .star-rating li {
+	padding: 0 1px;
+}
+.carousel .star-rating i {
+	font-size: 16px;
+	color: #ffdc12;
+}
+.carousel .overview {
+	padding: 3px 0 0 15px;
+}
+.carousel .overview .details {
+	padding: 5px 0 8px;
+}
+.carousel .overview b {
+	text-transform: uppercase;
+	color: #0a93b1;
+}
+.carousel .carousel-indicators {
+	bottom: -70px;
+    
+}
+.carousel-indicators li, .carousel-indicators li.active {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	margin: 1px 2px;
+	box-sizing: border-box;
+}
+.carousel-indicators li {	
+	background: #e2e2e2;
+	border: 4px solid #fff;
+}
+.carousel-indicators li.active {
+	color: #fff;
+	background: #0a93b1;
+	border: 5px double;    
+}
+</style>
+<div class="container-lg">
+	<div class="row">
+    <div class="row">
+        <div class="col-8 mx-auto text-center my-4">
+        <h1>Ce que nos clients disent de nous...</h1>
+        </div>
+    </div>
+    
+		<div class="col-sm-9 mx-auto my-4 text-center">
+			
+			<div id="myCarousel" class="carousel slide my-4" data-ride="carousel">
+				<!-- Carousel indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				</ol>   
+				<!-- Wrapper for carousel items -->
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<div class="row">
+							<div class="col-sm-4">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">Une parenthèse enchantée dans notre vie ordinaire, dans un cadre extraordinaire.
+Que ce soit au café, à la conciergerie ou en chambre, le service a été d'une grande qualité !</div>
+									<div class="media">
+										<img src="img\clients\ines-cuelle.jpg" class="mr-3" alt="">
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Inès Cuelle</b></div>
+												<div class="details">Programmatrice artistique</div>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+													</ul>
+												</div>
+											</div>										
+										</div>
+									</div>
+								</div>								
+							</div>
+							<div class="col-sm-4">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">Ravi de ce petit séjour à l'House Hotel pour l'anniversaire de ma fille. Personnel aux petits soins, disponible et à l'écoute. Merci infiniment ! Des décos au top et des pâtisseries délicieuses. Top</div>
+									<div class="media">
+										<img src="img\clients\samuel-entity.jpg" class="mr-3" alt="">
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Samuel Entity</b></div>
+												<div class="details">Photographe mode & lifestyle</div>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>								
+							</div>
+							<div class="col-sm-4">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">La renommée de cet établissement hors du temps est tout à fait justifiée. Parties communes somptueuses d´élégance, jardin bucolique, chambre au décor raffiné, bar enchanteur, restaurants parmi les meilleurs de la capitale, piscine... tout est perfection, tout est luxe, tout est volupté !</div>
+									<div class="media">
+										<img src="img\clients\marjorie-coueste.jpg" class="mr-3" alt="">
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Marjorie Coueste</b></div>
+												<div class="details">Barista</div>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+													</ul>
+												</div>
+											</div>										
+										</div>
+									</div>
+								</div>								
+							</div>
+						</div>			
+					</div>
+					<div class="carousel-item">
+						<div class="row">
+							<div class="col-sm-4">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">Sous le marbre de la réception, sous les dorures des chambres et sous les étoiles des assiettes du House Hotel se niche une vertu trop souvent absente dans les palaces : la cordialité ! Au voyageur privilégié, il reste le souvenir évident d'un établissement mythique à la hauteur de sa réputation.</div>
+									<div class="media">
+										<img src="img\clients\anne-hautation.jpg" class="mr-3" alt="">
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Anne Hautation</b></div>
+												<div class="details">Illustratrice / Web Designeuse</div>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+													</ul>
+												</div>
+											</div>										
+										</div>
+									</div>
+								</div>								
+							</div>
+
+							<div class="col-sm-4">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">Cadre magnifique mais tarifs injustifiés. Assiettes très copieuses, goût au rendez-vous, un petit havre de paix au milieu du brouhaha. Seul bémol les tarifs qui ne se justifient pas concrètement, malgré la qualité indéniable du service. Une adresse à faire néanmoins !</div>
+									<div class="media">
+										<img src="img\clients\mike-orm.jpg" class="mr-3" alt="">
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Mike Orm</b></div>
+												<div class="details">Business owner</div>											
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>								
+							</div>
+							
+							<div class="col-sm-4">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">L'accueil, le service, l'amabilité de chacune et chacun sont omniprésents, un vrai plaisir et je trouve que House Hotel se distingue pour cela par rapport à d'autres palaces de Paris. Plus intime, très belle décoration, beau jardin, et que dire de la qualité gastronomique... Bref, séjour parfait.</div>
+									<div class="media">
+										<img src="img\clients\pauline-cloud.jpg" class="mr-3" alt="">
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Pauline Cloud</b></div>
+												<div class="details">Hôtesse de l'air</div>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+													</ul>
+												</div>
+											</div>										
+										</div>
+									</div>
+								</div>								
+							</div>
+						</div>			
+					</div>
+					<div class="carousel-item">
+						<div class="row">
+							<div class="col-sm-4">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">Le restaurant est une pure merveille du début à la fin, un grand bravo au chef ! Ce qui m'a perturbé, c'est la signalétique. Pas évident de trouver son chemin pour aller au spa, sauf pour les habitués que j'ai suivis...</div>
+									<div class="media">
+										<img src="img\clients\guy-teub.jpg" class="mr-3" alt="">
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Guy Teub</b></div>
+												<div class="details">CEO en agence d'architectes</div>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+													</ul>
+												</div>
+											</div>										
+										</div>
+									</div>
+								</div>								
+							</div>
+
+							<div class="col-sm-4">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">La quintessence du luxe.  mais également d'une bienveillance générale jamais prise en défaut et comme une envie tenace d'y revenir le plus vite possible
+									on s´y sent aussi bien que chez soi.</div>
+									<div class="media">
+										<img src="img\clients\gustave-kernel.jpg" class="mr-3" alt="">
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Gustave Kernel</b></div>
+												<div class="details">Réalisateur</div>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+													</ul>
+												</div>
+											</div>										
+										</div>
+									</div>
+								</div>								
+							</div>
+
+							<div class="col-sm-4">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">Un accueil au top et une cuisine fabuleuse. La cuisson et l'assaisonnement du pigeon étaient juste parfaits 👍 Vraiment exceptionnel !</div>
+									<div class="media">
+										<img src="img\clients\camille-route.jpg" class="mr-3" alt="">
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Camille Route</b></div>
+												<div class="details">Data Analyst</div>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+													</ul>
+												</div>
+											</div>										
+										</div>
+									</div>
+								</div>								
+							</div>
+							
+						</div>			
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+{% endblock %}

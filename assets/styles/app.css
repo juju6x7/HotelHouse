@@ -1,6 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
-/* font-family: 'Tangerine', cursive; */
+/* @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Tangerine:wght@400;700&display=swap');
+/* font-family: 'Cormorant Garamond', serif;
+font-family: 'Tangerine', cursive; */
 
+.container-lg{
+  margin-bottom: 100px !important;
+}
+
+h1, h3{
+	font-family: 'Playfair Display', serif !important;
+  font-weight: 600;
+}
+
+p{
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+}
 h2{
   font-family: 'Tangerine', cursive;
   font-size: 4rem !important;
@@ -29,28 +44,6 @@ color:#d8ad00 !important;
   border-radius: 75px;
   }
   
-
-/* ***************** SLIDER ****************** */
-
-.carousel-caption{
-    z-index: 1;
-}
-
-.drk::after {
-    content:"";
-    display:block;
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    background: rgb(2,0,36);
-    background: -moz-linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(0,0,0,1) 50%);
-    background: -webkit-linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(0,0,0,1) 50%);
-    background: linear-gradient(180deg, rgba(2,0,36,0) 70%, rgba(0,0,0,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#000000",GradientType=1);
-}
-
 /* ***************** NAVBAR ****************** */
 
 .classynav a{
@@ -88,11 +81,47 @@ color:#d8ad00 !important;
   color: white !important;
 }
 
-/* ***************** End NAVBAR ****************** */
+a.text-primary:focus, a.text-primary:hover {
+  color: black !important;
+}
+
+a.text-light:focus, a.text-light:hover {
+  color: black !important;
+}
+
+.nav-link.text-danger:hover {
+  font-weight: bold;
+  background-color: #dc3545 !important;
+  color: white !important;
+}
+
+/* ***************** SLIDER ****************** */
+
+.carousel-caption{
+  z-index: 1;
+}
+
+.drk::after {
+  content:"";
+  display:block;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background: rgb(2,0,36);
+  background: -moz-linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(0,0,0,1) 50%);
+  background: -webkit-linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(0,0,0,1) 50%);
+  background: linear-gradient(180deg, rgba(2,0,36,0) 70%, rgba(0,0,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#000000",GradientType=1);
+}
+
+
+/* ***************** TRIO ****************** */
 
 .trio{
-width: 300px;
-height: 300px;
+width: 200px;
+height: 200px;
 }
 
 .btn-info{
@@ -101,7 +130,17 @@ height: 300px;
     margin-bottom: 50px;
 }
 
+/* ***************** CHAMBRES ****************** */
+
+
+.btn.resa:hover{
+  background-color: black !important;
+  color:#d8ad00 !important;
+  font-weight: bold;
+}
+
 /* ***************** SPA ****************** */
+
 .shape{
   border-radius: 15px 50px; 
 }
@@ -124,9 +163,6 @@ a.soins{
 a.soins:hover{
   font-weight: bold;
 }
-
-
-/* ***************** End SPA ****************** */
 
 /* ***************** CONTACT ****************** */
 
