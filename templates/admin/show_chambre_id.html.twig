@@ -51,12 +51,8 @@
 							{# <td>{{ chambre.updatedAt | date('d/m/Y') }}</td> #}
 							<td>
 
-								<a href="{{ path('update_chambre', {"id": chambre.id}) }}" class="text-info" title="Modifier la chambre">
-									<i class="fa fa-edit"></i>
-								</a>
-								<a href="{{ path('hard_delete_chambre', {"id" : chambre.id}) }}" class="text-danger" title="Supprimer la chambre" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette chambre ?')">
-									<i class="fa fa-trash"></i>
-								</a>
+								<a href="{{ path('update_chambre', {"id": chambre.id}) }}" class="text-info" title="Modifier la chambre"><i class="fa fa-edit"></i></a>
+								<a href="{{ path('hard_delete_chambre', {"id" : chambre.id}) }}" class="text-danger" title="Supprimer la chambre" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette chambre ?')"><i class="fa fa-trash"></i></a>
 							</td>
 						</tr>
 					{% endfor %}
