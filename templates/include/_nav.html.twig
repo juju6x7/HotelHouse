@@ -33,12 +33,11 @@
 				</li>
 			</ul>
 
-			{# {% if app.user %}
-							<div class="text-nowrap mx-auto">Bonjour
-								<b>{{ app.user.firstname | capitalize }}</b>, vous êtes connecté en tant que :
-								<span class="text-info">{{ app.user.roles | first }}</span>
-							</div>
-						{% endif %}  #}
+			{% if app.user %}
+				<div class="text-nowrap mx-auto">Bonjour
+					<b>{{ app.user.firstname | capitalize }}</b>
+				</div>
+			{% endif %} 
 
 			{% if not app.user %}
 				<a class="nav-link text-decoration: none" href="{{ path('register_membre') }}">Inscription</a>
