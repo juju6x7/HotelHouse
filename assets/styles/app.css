@@ -70,7 +70,7 @@ color:#d8ad00 !important;
   color: black !important;
 }
 
-.dropdown-menu.goldy .dropdown-item:hover{
+.dropdown-menu.goldy .dropdown-item:hover .dropdown-item:focus{
   background-color:#d8ad00 !important;
   color: white !important;
   font-weight: bold;
