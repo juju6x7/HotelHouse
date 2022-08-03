@@ -53,7 +53,6 @@ class AdminController extends AbstractController
             $entityManager->persist($membre);
             $entityManager->flush();
 
-
             $this->addFlash('success', "Le membre a été modifié avec succès !");
             return $this->redirectToRoute('show_membre');
         }
@@ -61,7 +60,7 @@ class AdminController extends AbstractController
 
         return $this->render("admin/form/gestion_membre.html.twig", [
             'form' => $form->createView(),
-            'membres' => $membres
+            'membre' => $membre
         ]);
     } # end function updateMembre
 
@@ -70,12 +69,10 @@ class AdminController extends AbstractController
      */
     public function hardDeleteMembre(Membre $membre, EntityManagerInterface $entityManager): RedirectResponse
     {
-
         $entityManager->remove($membre);
         $entityManager->flush();
 
         $this->addFlash('success', "Le membre a bien été supprimé de la base de données");
         return $this->redirectToRoute('show_membre');
     }
-
 }

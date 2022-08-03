@@ -5,13 +5,16 @@
 
 {% block body %}
 
-	<h1 class="text-center my-4">Gestion des membres</h1>
+	{% if chambre is not defined %}
+		<h1 class="text-center my-4">Gestion des membres</h1>
+	{% else %}
+		<h1 class="text-center my-4">Modifier le membre</h1>
+	{% endif %}
 
 	<div class="row">
 		<div class="col-11 mx-auto my-4">
 
 			{{ form_start(form) }}
-
 			{# <div class="row">
 							<div class="col-4">
 								{{ form_row(form.roles) }}
@@ -23,9 +26,7 @@
 							
 							</div>
 							#}
-
 			{{ form_end(form) }}
-
 
 		</div>
 	</div>
