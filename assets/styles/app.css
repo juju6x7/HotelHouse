@@ -155,13 +155,14 @@ height: 200px;
   background-color: #0a93b1 !important;
 }
 
-a.soins{
+a.carte{
   text-decoration: none;
   color: white;
 }
 
-a.soins:hover{
+a.carte:hover{
   font-weight: bold;
+  color:#d8ad00 !important;
 }
 
 /* ***************** CONTACT ****************** */

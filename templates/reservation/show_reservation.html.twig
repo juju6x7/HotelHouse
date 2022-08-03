@@ -5,22 +5,25 @@
 
 {% block body %}
 
-	<h1 class="text-center my-4">Nos chambres  <i class="fa-solid fa-bed"></i></h1>
+	<h1 class="text-center my-4">Nos chambres
+		<i class="fa-solid fa-bed"></i>
+	</h1>
 	<div class="row">
-					<div class="col-8 mx-auto text-center">
-						<p>Les 39 chambres de l’hôtel se déploient sur les 7 étages de la maison.</p>
-						<p>Toutes différentes mais d’inspiration identique, elles ont en héritage <br>
-						le charme de cette maison parisienne historique.</p>
-						<p>Sur rue ou sur cour, elles sont paisibles et douillettes, avec du parquet <br> 
-						et du carrelage soigné dans les salles de bain.</p>
-					</div>
-				</div>
+		<div class="col-8 mx-auto text-center">
+			<p>Les 39 chambres de l’hôtel se déploient sur les 7 étages de la maison.</p>
+			<p>Toutes différentes mais d’inspiration identique, elles ont en héritage
+				<br>
+				le charme de cette maison parisienne historique.</p>
+			<p>Sur rue ou sur cour, elles sont paisibles et douillettes, avec du parquet
+				<br>
+				et du carrelage soigné dans les salles de bain.</p>
+		</div>
+	</div>
 	{% for chambre in chambres %}
 
 		<div class="row">
 			<div class="col-8 mx-auto">
-			
-
+				<br>
 				<div class="row">
 					<div class="col-5 mx-auto my-4 text-center">
 						<br>
@@ -33,17 +36,19 @@
 						</h4>
 
 						<p>{{ chambre.descriptionLong }}</p>
+						<p><strong>Nuit : {{ chambre.priceDay }} €</strong></p>
 						<br>
 						{# <a href="{{ path('commande_chambre', {'id': chambre.id}) }}" class="btn btn-primary"><i class="fa-solid fa-plus"></i></i>Réserver une chambre</a> #}
-						<a href="{{ path('commande_chambre', {'id': chambre.id}) }}" class="btn btn-primary resa my-4">
+						<a href="{{ path('commande_chambre', {'id': chambre.id}) }}" class="btn btn-primary resa">
 							<i class="fa-solid fa-plus"></i>
 							Réserver une chambre</a>
 					</div>
 
 					<div class="col-5 mx-auto my-4">
-						<img class="round-corner" src="{{ asset('uploads/' ~ chambre.photo) }}" width="600px" height="400px" alt="">
+						<img class="round-corner" src="{{ asset('uploads/' ~ chambre.photo) }}" width="600px" height="400px" alt="photo chambre hôtel de luxe">
 					</div>
 				</div>
+				<br>
 			</div>
 		</div>
 	{% endfor %}
