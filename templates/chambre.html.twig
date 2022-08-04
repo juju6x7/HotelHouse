@@ -37,11 +37,8 @@
 
 						<p>{{ chambre.descriptionLong }}</p>
 						<p><strong>Nuit : {{ chambre.priceDay }} €</strong></p>
-						<br>
 						{# <a href="{{ path('commande_chambre', {'id': chambre.id}) }}" class="btn btn-primary"><i class="fa-solid fa-plus"></i></i>Réserver une chambre</a> #}
-						<a href="{{ path('commande_chambre', {'id': chambre.id}) }}" class="btn btn-primary resa">
-							<i class="fa-solid fa-plus"></i>
-							Réserver une chambre</a>
+						<a href="{{ path('commande_chambre', {'id': chambre.id}) }}" class="btn btn-primary resa my-2"><i class="fa-solid fa-plus"></i> Réserver une chambre</a>
 					</div>
 
 					<div class="col-5 mx-auto my-4">
