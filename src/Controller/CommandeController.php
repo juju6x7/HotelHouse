@@ -19,7 +19,6 @@ class CommandeController extends AbstractController
      */
     public function reservationChambre(Chambre $chambre, Request $request, EntityManagerInterface $entityManager): Response
     {
-
         $commande = new Commande();
 
         $form = $this->createForm(ReservationsFormType::class, $commande)
