@@ -3,6 +3,10 @@
 /* font-family: 'Cormorant Garamond', serif;
 font-family: 'Tangerine', cursive; */
 
+body{
+  background-color:rgb(246, 255, 255);
+}
+
 .container-lg{
   margin-bottom: 100px !important;
 }
@@ -235,6 +239,16 @@ footer{
     background-color:rgba(0, 123, 255, 0.1);
 }
 
+.labels{
+  height: 200px;
+  background-color: white;
+  justify-content: space-between;
+}
+
+.h120{
+  height: 120px;
+}
+
 .bg-dark{
   align-items: center;
 }
@@ -256,12 +270,12 @@ footer{
 }
 
 .cgv{
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .footerband{
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1rem;
   align-items: center;
   color: white;
   padding: 10px;

@@ -1,62 +1,82 @@
-<footer class="mt-4 pt-4 g-0">
-	<div class="container-fluid">
-		<br>
-		<div class="row">
-			<div class="col-4">
-				<ul class="list-unstyled ms-2">
-
-					<li></li>
-
-					<li>
-						<a href="#" class="text-muted">Imprimer la page</a>
-					</li>
-					<li>
-						<a href="{{ path('show_contact') }}" class="text-muted">Contact</a>
-					</li>
-					<li>
-						<a href="#" class="text-muted">Partage</a>
-					</li>
-				</ul>
+<footer class="g-0">
+	<div
+		class="container-fluid">
+{# ////////////////////////////////// PART 1 : Labels //////////////////////////////////// #}
+		<div class="row labels">
+			<div class="col-8 mx-auto d-flex justify-content-between align-items-center">
+				<img class="h120" src="img\labels\distinction-palace-logo.jpg" alt="">
+				<img class="h120" src="img\labels\label_certification_bio.jpg" alt="">
+				<img class="h120" src="img\labels\travelers-choice-tripadvisor-2022.gif" alt="">
+				<img class="h120" src="img\labels\label-tourisme-et-handicap-logo.jpg" alt="">
+				<img class="h120" src="img\labels\forbes-travel-guide-stars.jpg" alt="">
 			</div>
+		</div>
+	</div>
 
-			<div class="col-4">
-				<strong>Newsletter</strong>
-				<form class="row g-3 pt-2">
-					<div class="col-auto">
-						<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Votre adresse e-mail">
-					</div>
-					<div class="col-auto">
-						<a href="#">
-							<button type="submit" class="btn bg-gold mb-3">S'abonner</button>
-						</a>
-					</div>
-				</form>
-			</div>
+{# ////////////////////////////////// PART 2 : Liens / Newsletter / RS //////////////////////////////////// #}
+	<div class="row mt-4">
+		<div class="col-4">
+			<ul class="list-unstyled ms-2">
+				<li>
+					<a href="#" class="text-muted">Imprimer la page</a>
+				</li>
+				<li>
+					<a href="{{ path('show_contact') }}" class="text-muted">Contact</a>
+				</li>
+				<li>
+					<a href="#" class="text-muted">Partage</a>
+				</li>
+			</ul>
+		</div>
 
-			<div class="col-4">
-				<div class="rs">
-					<strong>Réseaux Sociaux</strong>
-					<div class="pt-2">
-						<a href="#"><i class="fa-brands fa-facebook"></i></a>
-						<a href="#"><i class="fa-brands fa-instagram"></i></a>
-						<a href="#"><i class="fa-brands fa-youtube"></i></a>
-					</div>
+		<div class="col-4">
+			<strong>Newsletter</strong>
+			<form class="row g-3 pt-2">
+				<div class="col-auto">
+					<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Votre adresse e-mail">
+				</div>
+				<div class="col-auto">
+					<a href="#">
+						<button type="submit" class="btn bg-gold mb-3">S'abonner</button>
+					</a>
+				</div>
+			</form>
+		</div>
+
+		<div class="col-4">
+			<div class="rs">
+				<strong>Réseaux Sociaux</strong>
+				<div class="pt-2">
+					<a href="#"><i class="fa-brands fa-facebook"></i></a>
+					<a href="#"><i class="fa-brands fa-instagram"></i></a>
+					<a href="#"><i class="fa-brands fa-youtube"></i></a>
 				</div>
 			</div>
 		</div>
-{# ////////////////////////////////// PART 2 //////////////////////////////////// #}
+	</div>
+</div>
 
-		<div class="container">
-			<div class="row justify-content-md-center cgv">
-				<div class="col-md-auto"><a href="#">Plan du site</a></div>
-
-				<div class="col-md-auto"><a href="#">Politique de confidentialité</a></div>
-
-				<div class="col-md-auto"><a href="#">Mentions légales</a> & <a href="#">CGV</a></div>
-			</div>
+{# ////////////////////////////////// PART 3 : CGV... //////////////////////////////////// #}
+<div class="container">
+	<div class="row justify-content-md-center mt-4 cgv">
+		<div class="col-md-auto">
+			<a href="#">Plan du site</a>
 		</div>
-{# ////////////////////////////////// PART 3 //////////////////////////////////// #}
 
-	<div class="container-fluid bg-dark mt-3 mx-auto text-center footerband">&copy; HouseHotel {{ "now"|date('Y') }}- Made with <span class="gold">❤</span> by MAJA</div>
+		<div class="col-md-auto">
+			<a href="#">Politique de confidentialité</a>
+		</div>
 
-</footer>
+		<div class="col-md-auto">
+			<a href="#">Mentions légales</a>
+			&
+			<a href="#">CGV</a>
+		</div>
+	</div>
+</div>
+
+{# ////////////////////////////////// PART 4 : Copyright... //////////////////////////////////// #}
+<div class="container-fluid bg-dark mt-3 mx-auto text-center footerband">&copy; HouseHotel
+	{{ "now"|date('Y') }} - Made with
+	<span class="gold">❤</span>
+	by Julien PENNA feat. MarcA & Alexis</div></footer>
