@@ -96,7 +96,8 @@ class ReservationsFormType extends AbstractType
                 'attr' => [
                     'class' => 'd-block col-3 my-3 mx-auto btn btn-success'
                 ]
-            ]);
+            ])
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
