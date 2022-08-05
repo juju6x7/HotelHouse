@@ -20,7 +20,7 @@ class ReservationsController extends AbstractController
         return $this->render('reservation/show_reservation.html.twig', [
             'chambres' => $chambres
         ]);
-    } # end function showChambre()
+    } # end function Reservation()
 
     /**
      * @Route("voir-chambre-reservation{id}", name="show_reservation_chambre", methods={"GET|POST"})

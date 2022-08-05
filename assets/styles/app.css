@@ -3,6 +3,10 @@
 /* font-family: 'Cormorant Garamond', serif;
 font-family: 'Tangerine', cursive; */
 
+body{
+  background-color:rgb(246, 255, 255);
+}
+
 .container-lg{
   margin-bottom: 100px !important;
 }
@@ -10,6 +14,10 @@ font-family: 'Tangerine', cursive; */
 h1, h3{
 	font-family: 'Playfair Display', serif !important;
   font-weight: 600;
+}
+
+h1{
+  margin-top: 25px;
 }
 
 p{
@@ -70,9 +78,15 @@ color:#d8ad00 !important;
   color: black !important;
 }
 
-.dropdown-menu.goldy .dropdown-item:hover .dropdown-item:focus{
+.dropdown-menu.goldy .dropdown-item:hover{
   background-color:#d8ad00 !important;
   color: white !important;
+  font-weight: bold;
+}
+
+.dropdown-toggle:focus {
+  background-color:#d8ad00 !important;
+  color: black !important;
   font-weight: bold;
 }
 
@@ -225,6 +239,16 @@ footer{
     background-color:rgba(0, 123, 255, 0.1);
 }
 
+.labels{
+  height: 200px;
+  background-color: white;
+  justify-content: space-between;
+}
+
+.h120{
+  height: 120px;
+}
+
 .bg-dark{
   align-items: center;
 }
@@ -246,12 +270,12 @@ footer{
 }
 
 .cgv{
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .footerband{
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1rem;
   align-items: center;
   color: white;
   padding: 10px;

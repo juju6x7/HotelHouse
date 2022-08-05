@@ -17,9 +17,21 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 class ChambreController extends AbstractController
 {
     /**
+     * @Route("/chambres", name="chambre", methods={"GET"})
+     */
+    public function showChambre(EntityManagerInterface $entityManager): Response
+    {
+        $chambres = $entityManager->getRepository(Chambre::class)->findBy(['deletedAt' => null]);
+        
+        return $this->render('chambre.html.twig', [
+                'chambres' => $chambres
+        ]);
+    }
+    
+    /**
     * @Route("/voir-chambres", name="show_chambres", methods={"GET"})
     */
-    public function showChambre(EntityManagerInterface $entityManager): Response
+    public function showChambresAdmin(EntityManagerInterface $entityManager): Response
     {
         $chambres = $entityManager->getRepository(Chambre::class)->findBy(['deletedAt' => null]);
         
@@ -31,7 +43,7 @@ class ChambreController extends AbstractController
     /**
      * @Route("voir_chambre_{id}", name="show_chambre_{id}", methods={"GET"})
      */
-    public function showchambreId(Chambre $chambre): Response
+    public function showChambreId(Chambre $chambre): Response
     {
         return $this->render("admin/show_chambre_id.html.twig", [
             'chambre' => $chambre
