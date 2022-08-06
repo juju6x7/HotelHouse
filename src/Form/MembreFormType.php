@@ -17,7 +17,7 @@ class MembreFormType extends AbstractType
     {
         $builder
             ->add('roles', ChoiceType::class, [
-                'label' => 'Rôles',
+                'label' => 'Rôle',
                 'expanded' => true,
                 'choices' => [
                     'User' => 'ROLE_USER',
