@@ -11,23 +11,20 @@
 		<h1 class="text-center my-4">Modifier la chambre</h1>
 	{% endif %}
     
-	<div class="row">
-		<div class="col-8 mx-auto">
+	<div class="row g-0">
+		<div class="col-5 mx-auto">
 			{{ form_start(form) }}
 
                 <div class="row">
                     <div class="col-6">{{ form_row(form.title) }}</div>
                     <div class="col-6">{{ form_row(form.descriptionShort) }}</div>
                 </div>
-
                 {{ form_row(form.descriptionLong) }}
-
-                {{ form_row(form.priceDay) }}
-
-                {{ form_row(form.photo) }}
-
+				<div class="row">
+                    <div class="col-6">{{ form_row(form.priceDay) }}</div>
+                    <div class="col-6">{{ form_row(form.photo) }}</div>
+                </div>
 			{{ form_end(form) }}
-
 		</div>
 	</div>
 {% endblock %}

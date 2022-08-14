@@ -50,7 +50,7 @@ class Chambre
     private $priceDay;
 
     /**
-     * @ORM\OneToMany(targetEntity=Commande::class, mappedBy="id_chambre")
+     * @ORM\OneToMany(targetEntity=Commande::class, mappedBy="chambre")
      */
     private $commandes;
 

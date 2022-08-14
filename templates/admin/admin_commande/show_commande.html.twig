@@ -48,7 +48,7 @@
 							<td>{{ commande.phone}}</td>
 							<td>{{ commande.email}}</td>
 							<td>{{ commande.createdAt | date('d/m/Y') }}</td>
-							{# <td>
+							<td>
 								<a href="{{ path('create_commande')}}" class="btn btn-primary"><i class="fa-solid fa-plus"></i></a>
 
 								<a href="{{ path('show_commande', {"id": commande.id}) }}" class="text-info" title="Voir la commande"><i class="fa-solid fa-magnifying-glass"></i></a>
@@ -57,8 +57,8 @@
 
 								<a href="{{ path('soft_delete_commande', {'id': commande.id}) }}" class="text-info" title="Archiver la commande" onclick="return confirm('Voulez-vous archiver cette commande ?')"><i class="fa-solid fa-folder-arrow-down"></i></a>
 
-								<a href="{{ path('restore_commande', {'id': commande.id}) }}" class="text-info" title="Archiver la commande" onclick="return confirm('Voulez-vous restorer cette commande ?')"><i class="fa-solid fa-trash-arrow-up"></i></a>
-							</td> #}
+								{# <a href="{{ path('restore_commande', {'id': commande.id}) }}" class="text-info" title="Restaurer la commande" onclick="return confirm('Voulez-vous restaurer cette commande ?')"><i class="fa-solid fa-trash-arrow-up"></i></a> #}
+							</td>
 						</tr>
 					{% endfor %}
 				</tbody>

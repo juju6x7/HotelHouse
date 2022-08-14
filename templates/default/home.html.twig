@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Page Accueil
+{% block title %}House Hotel - Accueil
 {% endblock %}
 
 {% block body %}
@@ -21,14 +21,14 @@
 					<div class="carousel-inner">
 						<div class="carousel-item drk active">
 							<div class="slide1"></div>
-							<img src="img/slider/chambre1.jpg" class="d-block w-100" alt="...">
+							<img src="img/chambres/chambre1.jpg" class="d-block w-100" alt="...">
 							<div class="carousel-caption d-none d-md-block">
 								<h3>Confort et tranquilité</h3>
 								<p>Bienvenue sur le site de HouseHotel !</p>
 							</div>
 						</div>
 						<div class="carousel-item drk">
-							<img src="img/slider/chambre2.jpg" class="d-block w-100" alt="...">
+							<img src="img/chambres/chambre2.jpg" class="d-block w-100" alt="...">
 							<div class="carousel-caption d-none d-md-block">
 								<h3>Comme à la maison...</h3>
 								<p>Petit-déjeuner 5* à savourer
@@ -37,7 +37,7 @@
 							</div>
 						</div>
 						<div class="carousel-item drk">
-							<img src="img/slider/chambre3.jpg" class="d-block w-100" alt="...">
+							<img src="img/chambres/chambre4.jpg" class="d-block w-100" alt="...">
 							<div class="carousel-caption d-none d-md-block">
 								<h3>Pour vous !</h3>
 								<p>Toute l'équipe de l'hôtel
@@ -46,7 +46,7 @@
 							</div>
 						</div>
 						<div class="carousel-item drk">
-							<img src="img\slider\spa-ambiance-marocaine.jpg" class="d-block w-100" alt="...">
+							<img src="img\spa\spa-ambiance-marocaine.jpg" class="d-block w-100" alt="...">
 							<div class="carousel-caption d-none d-md-block">
 								<h3>Un riad en plein Paris</h3>
 								<p>Un parfum d'évasion
@@ -55,7 +55,7 @@
 							</div>
 						</div>
 						<div class="carousel-item drk">
-							<img src="img\slider\spa-galets.jpg" class="d-block w-100" alt="...">
+							<img src="img\spa\spa-galets.jpg" class="d-block w-100" alt="...">
 							<div class="carousel-caption d-none d-md-block">
 								<h3>Détente et volupté</h3>
 								<p>Profitez du spa
@@ -64,7 +64,7 @@
 							</div>
 						</div>
 						<div class="carousel-item drk">
-							<img src="img/slider/chef.jpg" class="d-block w-100" alt="...">
+							<img src="img/restaurant/chef.jpg" class="d-block w-100" alt="...">
 							<div class="carousel-caption d-none d-md-block">
 								<h3>Papilles en folies</h3>
 								<p>Notre chef étoilé
@@ -73,21 +73,21 @@
 							</div>
 						</div>
 						{# <div class="carousel-item drk">
-																                    <img src="img/chat-route.jpg" class="d-block w-100" alt="...">
-																                    <div class="carousel-caption d-none d-md-block">
-																                        <h3>"J'ai été abandonné 
-																                           <br> sur la route."</h3>
-																                        <p>Je cherche un nouveau foyer, plus chaleureux...</p>
-																                    </div>
-																                </div>
-																                <div class="carousel-item drk">
-																                        <img src="img/chaton-joueur.jpg" class="d-block w-100 bg-info" alt="...">
-																                        <div class="carousel-caption d-none d-md-block">
-																                            <h3>Tu veux jouer avec moi ?</h3>
-																                            <p>J'ai besoin d'un compagnon pour m'amuser et me câliner.</p>
-																                        </div>
-																                    
-																                </div> #}
+																																								                    <img src="img/chat-route.jpg" class="d-block w-100" alt="...">
+																																								                    <div class="carousel-caption d-none d-md-block">
+																																								                        <h3>"J'ai été abandonné 
+																																								                           <br> sur la route."</h3>
+																																								                        <p>Je cherche un nouveau foyer, plus chaleureux...</p>
+																																								                    </div>
+																																								                </div>
+																																								                <div class="carousel-item drk">
+																																								                        <img src="img/chaton-joueur.jpg" class="d-block w-100 bg-info" alt="...">
+																																								                        <div class="carousel-caption d-none d-md-block">
+																																								                            <h3>Tu veux jouer avec moi ?</h3>
+																																								                            <p>J'ai besoin d'un compagnon pour m'amuser et me câliner.</p>
+																																								                        </div>
+																																								                    
+																																								                </div> #}
 					</div>
 					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -101,49 +101,50 @@
 			</div>
 		</div>
 	</div>
-	<!-- FIN CONTAINER -->
+	<!-- FIN CAROUSEL -->
 
-</div>
-<!-- FIN CAROUSEL -->
+	{# ******************************* TRIO PHOTOS CHAMBRE, RESTAURANT, SPA *****************************************  #}
+	<br>
+	<div class="container">
 
-{# ******************************* TRIO PHOTOS CHAMBRE, RESTAURANT, SPA *****************************************  #}
-<br>
-
-<div class="container pt-4">
 		<div class="row">
 			<div class="col-9 mx-auto">
-			<div class="row">
-				<div class="col-md-4 text-center">
-					<img class="rounded-circle img-fluid trio pb-2" src="img/home/chambre.jpg" alt="chambre luxueuse hôtel">
-					<h3>Chambres</h3>
-					<p>Aussi confortables que spacieuses, nous proposons 3 gammes de chambres de haute qualité.</p>
-					<a href="/chambres">
-						<button type="button" class="btn btn-info">Découvrez nos chambres</button>
-					</a>
-				</div>
+				<div class="row">
+					<div class="col-md-4 text-center">
+						<img class="rounded-circle img-fluid trio pb-2" src="img/home/chambre.jpg" alt="chambre luxueuse hôtel">
+						<h3>Chambres</h3>
+						<p>Aussi confortables que spacieuses, nous proposons 3 gammes de chambres de haute qualité.</p>
+						<a href="/chambres">
+							<button type="button" class="btn btn-info">Découvrez nos chambres</button>
+						</a>
+					</div>
 
-				<div class="col text-center">
-					<img class="rounded-circle img-fluid trio pb-2" src="img/home/resto.jpg" alt="chambre luxueuse hôtel">
+					<div class="col text-center">
+						<img class="rounded-circle img-fluid trio pb-2" src="img/home/resto.jpg" alt="chambre luxueuse hôtel">
 
-					<h3>Restaurant</h3>
-					<p>On met les petits plats dans les grands pour vous offrir le meilleur de la gastronomie.</p>
-					<a href="/restaurant">
-						<button type="button" class="btn btn-info">+ d'infos sur le resto</button>
-					</a>
-				</div>
+						<h3>Restaurant</h3>
+						<p>On met les petits plats dans les grands pour vous offrir le meilleur de la gastronomie.</p>
+						<a href="/restaurant">
+							<button type="button" class="btn btn-info">+ d'infos sur le resto</button>
+						</a>
+					</div>
 
-				<div class="col text-center">
-					<img class="rounded-circle img-fluid trio pb-2" src="img/home/spa-square.jpg" alt="spa, galets sur le dos d'une femme">
+					<div class="col text-center">
+						<img class="rounded-circle img-fluid trio pb-2" src="img/home/spa-square.jpg" alt="spa, galets sur le dos d'une femme">
 
-					<h3>Spa</h3>
-					<p>Relaxation et délectation <br>
-					dans un décor de rêve avec <br>
-					piscine, jaccuzzi, sauna, massages...</p>
-					<a href="/spa">
-						<button type="button" class="btn btn-info">En savoir plus</button>
-					</a>
+						<h3>Spa</h3>
+						<p>Relaxation et délectation
+							<br>
+							dans un décor de rêve avec
+							<br>
+							piscine, jaccuzzi, sauna, massages...</p>
+						<a href="/spa">
+							<button type="button" class="btn btn-info">En savoir plus</button>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>{% endblock %}
+
+{% endblock %}
