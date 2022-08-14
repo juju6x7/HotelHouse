@@ -103,6 +103,19 @@ a.text-light:focus, a.text-light:hover {
   color: black !important;
 }
 
+a.text-light:hover {
+  color: black !important;
+}
+
+a.text-light.perso:focus {
+  background-color: #d8ad00;
+  font-weight: bold;
+}
+
+.fa-right-from-bracket{
+  padding-top: 5px;
+}
+
 .nav-link.text-danger:hover {
   font-weight: bold;
   background-color: #dc3545 !important;
@@ -271,8 +284,16 @@ footer{
 }
 
 .footerband{
-  text-decoration: none;
   font-size: 1rem;
   align-items: center;
   padding: 10px;
+}
+
+.github{
+  text-decoration: none !important;
+  color: white;
+}
+
+.github:hover{
+color: #d8ad00 !important;
 }
